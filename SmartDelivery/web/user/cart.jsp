@@ -29,6 +29,10 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body class="goto-here">
+  
+
+  
+  
 		<div class="py-1 bg-primary">
     	<div class="container">
     		<div class="row no-gutters d-flex align-items-start align-items-center px-md-0">
@@ -64,16 +68,16 @@
               <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
               	<a class="dropdown-item" href="shop.jsp">Shop</a>
-              	<a class="dropdown-item" href="wishlist.html">Wishlist</a>
-                <a class="dropdown-item" href="product-single.html">Single Product</a>
-                <a class="dropdown-item" href="cart.html">Cart</a>
-                <a class="dropdown-item" href="checkout.html">Checkout</a>
+              	<a class="dropdown-item" href="wishlist.jsp">Wishlist</a>
+                <a class="dropdown-item" href="product-single.jsp">Single Product</a>
+                <a class="dropdown-item" href="cart.jsp">Cart</a>
+                <a class="dropdown-item" href="checkout.jsp">Checkout</a>
               </div>
             </li>
-	          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-	          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+	          <li class="nav-item"><a href="about.jsp" class="nav-link">About</a></li>
+	          <li class="nav-item"><a href="blog.jsp" class="nav-link">Blog</a></li>
 	          <li class="nav-item"><a href="login.jsp" class="nav-link">Login</a></li>
-	          <li class="nav-item cta cta-colored"><a href="cart.html" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
+	          <li class="nav-item cta cta-colored"><a href="cart.jsp" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
 
 	        </ul>
 	      </div>
@@ -167,7 +171,7 @@
 	              </div>
 	            </form>
     				</div>
-    				<p><a href="checkout.html" class="btn btn-primary py-3 px-4">Apply Coupon</a></p>
+    				<p><a href="checkout.jsp" class="btn btn-primary py-3 px-4">Apply Coupon</a></p>
     			</div>
     			<div class="col-lg-4 mt-5 cart-wrap ftco-animate">
     				<div class="cart-total mb-3">
@@ -188,7 +192,7 @@
 	              </div>
 	            </form>
     				</div>
-    				<p><a href="checkout.html" class="btn btn-primary py-3 px-4">Estimate</a></p>
+    				<p><a href="checkout.jsp" class="btn btn-primary py-3 px-4">Estimate</a></p>
     			</div>
     			<div class="col-lg-4 mt-5 cart-wrap ftco-animate">
     				<div class="cart-total mb-3">
@@ -211,7 +215,7 @@
     						<span>$17.60</span>
     					</p>
     				</div>
-    				<p><a href="checkout.html" class="btn btn-primary py-3 px-4">Proceed to Checkout</a></p>
+    				<p><a href="checkout.jsp" class="btn btn-primary py-3 px-4">Proceed to Checkout</a></p>
     			</div>
     		</div>
 			</div>
@@ -261,7 +265,7 @@
               <h2 class="ftco-heading-2">Menu</h2>
               <ul class="list-unstyled">
                 <li><a href="shop.jsp" class="py-2 d-block">Shop</a></li>
-                <li><a href="#" class="py-2 d-block">About</a></li>
+                <li><a href="about.jsp" class="py-2 d-block">About</a></li>
                 <li><a href="#" class="py-2 d-block">Journal</a></li>
                 <li><a href="login.jsp" class="py-2 d-block">Login</a></li>
               </ul>
@@ -315,7 +319,10 @@
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
 
-  <script src="js/jquery.min.js"></script>
+
+    
+  </body>
+      <script src="js/jquery.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
@@ -368,6 +375,6 @@
 		    
 		});
 	</script>
-    
-  </body>
+	
+	
 </html>

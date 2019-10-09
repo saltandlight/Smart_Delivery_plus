@@ -109,6 +109,11 @@ dd {
   margin-bottom: .5rem;
   margin-left: 0; }
 
+div > pos{
+	width:250px;
+	height:100px;
+}
+
 blockquote {
   margin: 0 0 1rem; }
 
@@ -473,6 +478,7 @@ pre {
   flex-wrap: wrap;
   margin-right: -15px;
   margin-left: -15px; }
+
 
 .no-gutters {
   margin-right: 0;

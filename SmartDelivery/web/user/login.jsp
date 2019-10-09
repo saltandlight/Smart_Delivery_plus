@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
+  
   <body class="goto-here">
 		<div class="py-1 bg-primary">
     	<div class="container">
@@ -64,16 +65,16 @@
               <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
               	<a class="dropdown-item" href="shop.jsp">Shop</a>
-              	<a class="dropdown-item" href="wishlist.html">Wishlist</a>
-                <a class="dropdown-item" href="product-single.html">Single Product</a>
-                <a class="dropdown-item" href="cart.html">Cart</a>
-                <a class="dropdown-item" href="checkout.html">Checkout</a>
+              	<a class="dropdown-item" href="wishlist.jsp">Wishlist</a>
+                <a class="dropdown-item" href="product-single.jsp">Single Product</a>
+                <a class="dropdown-item" href="cart.jsp">Cart</a>
+                <a class="dropdown-item" href="checkout.jsp">Checkout</a>
               </div>
             </li>
-	          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-	          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+	          <li class="nav-item"><a href="about.jsp" class="nav-link">About</a></li>
+	          <li class="nav-item"><a href="blog.jsp" class="nav-link">Blog</a></li>
 	          <li class="nav-item active"><a href="login.jsp" class="nav-link">Login</a></li>
-	          <li class="nav-item cta cta-colored"><a href="cart.html" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
+	          <li class="nav-item cta cta-colored"><a href="cart.jsp" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
 
 	        </ul>
 	      </div>
@@ -122,48 +123,24 @@
         
         
         <div class="row block-9">
+        
+        
           <div class="col-md-6 order-md-last d-flex">
-          <!-- 
+         <div class="pos" style="width:500px">
+        </div>
             <form action="#" class="bg-white p-5 contact-form">
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Your Name">
+                <input type="text" width="350" id="id" name="userid" class="form-control" placeholder="ID">
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Your Email">
+                <input type="text" width="350" id="pwd" name="userpwd" class="form-control" placeholder="Password">
               </div>
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Subject">
-              </div>
-              <div class="form-group">
-                <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
-              </div>
-              <div class="form-group">
-                <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
-              </div>
-            </form> -->
              
-             
-					<form action="#" method="POST" >
-						<div class="form-group">
-                <input type="text" class="form-control" placeholder="LOGIN">
+              <div class="form-group">
+                <input type="submit" width="350" value="LOGIN" class="btn btn-primary py-3 px-5">
               </div>
-						
-					
-						  <div class="form-group">
-							<label class="stext-102 cl3" for="id">ID</label>
-							<input class="size-111 bor8 stext-102 cl2 p-lr-20" id="id" type="text" name="CUSTOMER_ID">
-						</div>
-
-						  <div class="form-group">
-							<label class="stext-102 cl3" for="pwd">PASSWORD</label>
-							<input class="size-111 bor8 stext-102 cl2 p-lr-20" id="pwd" type="password" name="CUSTOMER_PWD">
-						</div> 
-	
-						  <div class="form-group">
-						<input type="submit" value="LOG IN" class="flex-c-m m-lr-auto stext-101 cl0  bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer" style="width : 300px ;height : 50px">
-						</div>
-					</form>
-		
+            </form> 
+             
              
           </div>
 <!--  
@@ -202,7 +179,7 @@
               <h2 class="ftco-heading-2">Menu</h2>
               <ul class="list-unstyled">
                 <li><a href="shop.jsp" class="py-2 d-block">Shop</a></li>
-                <li><a href="#" class="py-2 d-block">About</a></li>
+                <li><a href="about.jsp" class="py-2 d-block">About</a></li>
                 <li><a href="#" class="py-2 d-block">Journal</a></li>
                 <li><a href="login.jsp" class="py-2 d-block">Login</a></li>
               </ul>

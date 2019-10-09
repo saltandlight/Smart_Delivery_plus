@@ -68,14 +68,14 @@
               	<a class="dropdown-item" href="/SmartDelivery/user/shop.jsp">Shop</a>
               	<a class="dropdown-item" href="/SmartDelivery/user/wishlist.html">Wishlist</a>
                 <a class="dropdown-item" href="/SmartDelivery/user/product-single.html">Single Product</a>
-                <a class="dropdown-item" href="/SmartDelivery/user/cart.html">Cart</a>
+                <a class="dropdown-item" href="/SmartDelivery/user/cart.jsp">Cart</a>
                 <a class="dropdown-item" href="/SmartDelivery/user/checkout.html">Checkout</a>
               </div>
             </li>
-	          <li class="nav-item"><a href="/SmartDelivery/user/about.html" class="nav-link">About</a></li>
-	          <li class="nav-item"><a href="/SmartDelivery/user/blog.html" class="nav-link">Blog</a></li>
+	          <li class="nav-item"><a href="/SmartDelivery/user/about.jsp" class="nav-link">About</a></li>
+	          <li class="nav-item"><a href="/SmartDelivery/user/blog.jsp" class="nav-link">Blog</a></li>
 	          <li class="nav-item"><a href="/SmartDelivery/user/login.jsp" class="nav-link">Login</a></li>
-	          <li class="nav-item cta cta-colored"><a href="cart.html" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
+	          <li class="nav-item cta cta-colored"><a href="cart.jsp" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
 
 	        </ul>
 	      </div>
@@ -633,7 +633,7 @@
               <h2 class="ftco-heading-2">Menu</h2>
               <ul class="list-unstyled">
                 <li><a href="shop.jsp" class="py-2 d-block">Shop</a></li>
-                <li><a href="#" class="py-2 d-block">About</a></li>
+                <li><a href="about.jsp" class="py-2 d-block">About</a></li>
                 <li><a href="#" class="py-2 d-block">Journal</a></li>
                 <li><a href="login.jsp" class="py-2 d-block">Login</a></li>
               </ul>
@@ -687,7 +687,10 @@
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
 
-  <script src="/SmartDelivery/user/js/jquery.min.js"></script>
+
+    
+  </body>
+    <script src="/SmartDelivery/user/js/jquery.min.js"></script>
   <script src="/SmartDelivery/user/js/jquery-migrate-3.0.1.min.js"></script>
   <script src="/SmartDelivery/user/js/popper.min.js"></script>
   <script src="/SmartDelivery/user/js/bootstrap.min.js"></script>
@@ -703,6 +706,4 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="/SmartDelivery/user/js/google-map.js"></script>
   <script src="/SmartDelivery/user/js/main.js"></script>
-    
-  </body>
 </html>
