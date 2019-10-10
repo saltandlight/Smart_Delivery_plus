@@ -66,7 +66,7 @@
               <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
               	<a class="dropdown-item" href="/SmartDelivery/user/shop.jsp">Shop</a>
-              	<a class="dropdown-item" href="/SmartDelivery/user/wishlist.html">Wishlist</a>
+              	<a class="dropdown-item" href="/SmartDelivery/user/wishlist.jsp">Wishlist</a>
                 <a class="dropdown-item" href="/SmartDelivery/user/product-single.html">Single Product</a>
                 <a class="dropdown-item" href="/SmartDelivery/user/cart.jsp">Cart</a>
                 <a class="dropdown-item" href="/SmartDelivery/user/checkout.html">Checkout</a>
@@ -74,7 +74,10 @@
             </li>
 	          <li class="nav-item"><a href="/SmartDelivery/user/about.jsp" class="nav-link">About</a></li>
 	          <li class="nav-item"><a href="/SmartDelivery/user/blog.jsp" class="nav-link">Blog</a></li>
+	          <li class="nav-item"><a href="/SmartDelivery/user/join.jsp" class="nav-link">Join</a></li>
 	          <li class="nav-item"><a href="/SmartDelivery/user/login.jsp" class="nav-link">Login</a></li>
+	         <!-- 로그인한 후에만 들어갈 수 있게 해야 함  -->
+	          <li class="nav-item"><a href="/SmartDelivery/user/deliverycheck.jsp" class="nav-link">DeliveryCheck</a></li>
 	          <li class="nav-item cta cta-colored"><a href="cart.jsp" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
 
 	        </ul>

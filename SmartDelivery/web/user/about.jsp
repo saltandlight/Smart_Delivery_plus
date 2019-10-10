@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -80,15 +82,18 @@
               <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
               	<a class="dropdown-item" href="shop.jsp">Shop</a>
-              	<a class="dropdown-item" href="wishlist.html">Wishlist</a>
-                <a class="dropdown-item" href="product-single.html">Single Product</a>
+              	<a class="dropdown-item" href="wishlist.jsp">Wishlist</a>
+                <a class="dropdown-item" href="product-single.jsp">Single Product</a>
                 <a class="dropdown-item" href="cart.jsp">Cart</a>
-                <a class="dropdown-item" href="checkout.html">Checkout</a>
+                <a class="dropdown-item" href="checkout.jsp">Checkout</a>
               </div>
             </li>
 	          <li class="nav-item active"><a href="about.jsp" class="nav-link">About</a></li>
 	          <li class="nav-item"><a href="blog.jsp" class="nav-link">Blog</a></li>
+	          <li class="nav-item"><a href="join.jsp" class="nav-link">Join</a></li>
 	          <li class="nav-item"><a href="login.jsp" class="nav-link">Login</a></li>
+	          <!-- 로그인한 후에만 들어갈 수 있게 해야 함  -->
+	          <li class="nav-item"><a href="deliverycheck.jsp" class="nav-link">DeliveryCheck</a></li>
 	          <li class="nav-item cta cta-colored"><a href="cart.jsp" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
 
 	        </ul>
@@ -124,7 +129,7 @@
 	          </div>
 	          <div class="pb-md-5">
 	          	<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-							<p>But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their.</p>
+							<p>But nothing the copy said could convince her and so it didnât take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their.</p>
 							<p><a href="shop.jsp" class="btn btn-primary">Shop now</a></p>
 						</div>
 					</div>
@@ -362,6 +367,8 @@
                 <li><a href="about.jsp" class="py-2 d-block">About</a></li>
                 <li><a href="#" class="py-2 d-block">Journal</a></li>
                 <li><a href="login.jsp" class="py-2 d-block">Login</a></li>
+                
+	         
               </ul>
             </div>
           </div>

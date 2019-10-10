@@ -9,7 +9,7 @@
   <link rel="icon" type="image/png" href="img/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Material Dashboard by Creative Tim
+    Smart Delivery+
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -20,7 +20,6 @@
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="demo/demo.css" rel="stylesheet" />
 </head>
-
 <body class="">
   <div class="wrapper ">
     <div class="sidebar" data-color="purple" data-background-color="white" data-image="img/sidebar-1.jpg">
@@ -31,7 +30,7 @@
     -->
       <div class="logo">
         <a href="http://www.creative-tim.com" class="simple-text logo-normal">
-          Creative Tim
+          Smart Delivery+
         </a>
       </div>
       <div class="sidebar-wrapper">
@@ -42,12 +41,17 @@
               <p>Dashboard</p>
             </a>
           </li>
-          <li class="nav-item ">
+          
+          <!-- Left_Menu_nav User Profile Start-->
+          <!-- <li class="nav-item ">
             <a class="nav-link" href="user.html">
               <i class="material-icons">person</i>
               <p>User Profile</p>
             </a>
-          </li>
+          </li> -->
+          <!-- Menu_nav User Profile End -->
+          
+          <!-- Left_Menu_nav Table List Start-->
           <li class="nav-item ">
             <a class="nav-link" href="tables.html">
               <i class="material-icons">content_paste</i>
@@ -78,12 +82,14 @@
               <p>Notifications</p>
             </a>
           </li>
+          <!-- 
           <li class="nav-item ">
             <a class="nav-link" href="rtl.html">
               <i class="material-icons">language</i>
               <p>RTL Support</p>
             </a>
           </li>
+           -->
           <li class="nav-item active-pro ">
             <a class="nav-link" href="upgrade.html">
               <i class="material-icons">unarchive</i>
@@ -162,76 +168,201 @@
       <!-- End Navbar -->
       <div class="content">
         <div class="container-fluid">
+        
+        <!-- TABLE START-------------------------------------------------------------------->
+        <div class="col-md-12">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title ">Driver List</h4>
+                  <p class="card-category">Driver List Table</p>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead class=" text-primary">
+                        <th>
+                          Car Id
+                        </th>
+                        <th>
+                          Driver Name
+                        </th>
+                        <th>
+                          Car Number
+                        </th>
+                        <th>
+                          Phone Number
+                        </th>
+                        <th>
+                          Status
+                        </th>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            D001
+                          </td>
+                          <td>
+                            Dakota Rice
+                          </td>
+                          <td>
+                            30하 4573
+                          </td>
+                          <td>
+                            010-3840-1592
+                          </td>
+                          <td>
+                            1
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            D002
+                          </td>
+                          <td>
+                            Minerva Hooper
+                          </td>
+                          <td>
+                            30하 2913
+                          </td>
+                          <td>
+                            010-4859-2930
+                          </td>
+                          <td>
+                            0
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            D003
+                          </td>
+                          <td>
+                            Sage Rodriguez
+                          </td>
+                          <td>
+                            30하 1283
+                          </td>
+                          <td>
+                            010-8293-1002
+                          </td>
+                          <td>
+                            0
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            D004
+                          </td>
+                          <td>
+                            Philip Chaney
+                          </td>
+                          <td>
+                            30하 9301
+                          </td>
+                          <td>
+                            010-2391-2211
+                          </td>
+                          <td>
+                            0
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            D005
+                          </td>
+                          <td>
+                            Doris Greene
+                          </td>
+                          <td>
+                            30하 8830
+                          </td>
+                          <td>
+                            010-4113-3929
+                          </td>
+                          <td>
+                            0
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            D006
+                          </td>
+                          <td>
+                            Mason Porter
+                          </td>
+                          <td>
+                            30하 1123
+                          </td>
+                          <td>
+                            010-6849-3923
+                          </td>
+                          <td>
+                            0
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+        <!-- TABLE END-------------------------------------------------------------------->
+        
+         <!-- CUSTOMER GRAPH START-------------------------------------------------------------------->
           <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="card card-stats">
-                <div class="card-header card-header-warning card-header-icon">
-                  <div class="card-icon">
-                    <i class="material-icons">content_copy</i>
-                  </div>
-                  <p class="card-category">Used Space</p>
-                  <h3 class="card-title">49/50
-                    <small>GB</small>
-                  </h3>
+            <div class="col-md-4">
+              <div class="card card-chart">
+                <div class="card-header card-header-success">
+                  <div class="ct-chart" id="dailySalesChart"></div>
+                </div>
+                <div class="card-body">
+                  <h4 class="card-title">Daily Sales</h4>
+                  <p class="card-category">
+                    <span class="text-success"><i class="fa fa-long-arrow-up"></i> 55% </span> increase in today sales.</p>
                 </div>
                 <div class="card-footer">
                   <div class="stats">
-                    <i class="material-icons text-danger">warning</i>
-                    <a href="#pablo">Get More Space...</a>
+                    <i class="material-icons">access_time</i> updated 4 minutes ago
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="card card-stats">
-                <div class="card-header card-header-success card-header-icon">
-                  <div class="card-icon">
-                    <i class="material-icons">store</i>
-                  </div>
-                  <p class="card-category">Revenue</p>
-                  <h3 class="card-title">$34,245</h3>
+            <div class="col-md-4">
+              <div class="card card-chart">
+                <div class="card-header card-header-warning">
+                  <div class="ct-chart" id="websiteViewsChart"></div>
+                </div>
+                <div class="card-body">
+                  <h4 class="card-title">Real Time Visitors</h4>
+                  <p class="card-category">Today Visitors</p>
                 </div>
                 <div class="card-footer">
                   <div class="stats">
-                    <i class="material-icons">date_range</i> Last 24 Hours
+                    <i class="material-icons">access_time</i> campaign sent 2 days ago
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="card card-stats">
-                <div class="card-header card-header-danger card-header-icon">
-                  <div class="card-icon">
-                    <i class="material-icons">info_outline</i>
-                  </div>
-                  <p class="card-category">Fixed Issues</p>
-                  <h3 class="card-title">75</h3>
+            <div class="col-md-4">
+              <div class="card card-chart">
+                <div class="card-header card-header-danger">
+                  <div class="ct-chart" id="completedTasksChart"></div>
+                </div>
+                <div class="card-body">
+                  <h4 class="card-title">Data Correlation</h4>
+                  <p class="card-category">Log Data</p>
                 </div>
                 <div class="card-footer">
                   <div class="stats">
-                    <i class="material-icons">local_offer</i> Tracked from Github
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="card card-stats">
-                <div class="card-header card-header-info card-header-icon">
-                  <div class="card-icon">
-                    <i class="fa fa-twitter"></i>
-                  </div>
-                  <p class="card-category">Followers</p>
-                  <h3 class="card-title">+245</h3>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons">update</i> Just Updated
+                    <i class="material-icons">access_time</i> campaign sent 2 days ago
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="row">
+          <!-- CUSTOMER GRAPH END -------------------------------------------------------------------->
+          
+          <!-- DELIVERY GRAPH START -------------------------------------------------------------------->
+           <!-- <div class="row">
             <div class="col-md-4">
               <div class="card card-chart">
                 <div class="card-header card-header-success">
@@ -281,9 +412,86 @@
                 </div>
               </div>
             </div>
+          </div> -->
+          <!--DELIVERY GRAPH END------------------------------------------------------------>
+          
+          
+          
+          <!-- 1.Driver Info / 2.Temperature / 3.Humidity / 4.Impact Start-------------------------------------------------------------------->
+           <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                <div class="card-header card-header-warning card-header-icon">
+                  <div class="card-icon">
+                    <i class="material-icons">info_outline</i>
+                  </div>
+                  <p class="card-category">Driver Info</p>
+                  <h3 class="card-title">Driver Info
+                    <!-- <small>GB</small> -->
+                  </h3>
+                </div>
+                <div class="card-footer">
+                  <div class="stats">
+                    <i class="material-icons text-danger">info_outline</i>
+                    <a href="#pablo">Get More Space...</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                <div class="card-header card-header-success card-header-icon">
+                  <div class="card-icon">
+                    <i class="material-icons">info_outline</i>
+                  </div>
+                  <p class="card-category">Temperature</p>
+                  <h3 class="card-title">Temperature</h3>
+                </div>
+                <div class="card-footer">
+                  <div class="stats">
+                    <i class="material-icons">date_range</i> Last 24 Hours
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                <div class="card-header card-header-danger card-header-icon">
+                  <div class="card-icon">
+                    <i class="material-icons">info_outline</i>
+                  </div>
+                  <p class="card-category">Humidity</p>
+                  <h3 class="card-title">Humidity</h3>
+                </div>
+                <div class="card-footer">
+                  <div class="stats">
+                    <i class="material-icons">local_offer</i> Tracked from Github
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                <div class="card-header card-header-info card-header-icon">
+                  <div class="card-icon">
+                    <i class="material-icons">info_outline</i>
+                  </div>
+                  <p class="card-category">Impact</p>
+                  <h3 class="card-title">Impact</h3>
+                </div>
+                <div class="card-footer">
+                  <div class="stats">
+                    <i class="material-icons">update</i> Just Updated
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
+          <!-- 1.Driver Info / 2.Temperature / 3.Humidity / 4.Impact END -------------------------------------------------------------------->
+          
+          <!--  -->
           <div class="row">
-            <div class="col-lg-6 col-md-12">
+            <!-- <div class="col-lg-6 col-md-12">
               <div class="card">
                 <div class="card-header card-header-tabs card-header-primary">
                   <div class="nav-tabs-navigation">
@@ -527,8 +735,10 @@
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="col-lg-6 col-md-12">
+            </div> -->
+            
+            <!-- Employees Stats -->
+            <!-- <div class="col-lg-6 col-md-12">
               <div class="card">
                 <div class="card-header card-header-warning">
                   <h4 class="card-title">Employees Stats</h4>
@@ -571,7 +781,18 @@
                   </table>
                 </div>
               </div>
+            </div> -->
+            <!--  -->
+            
+            
+            <!-- Kakao Map START -->
+            <div>
+            
+            
             </div>
+            <!-- Kakao Map END -->
+            
+            
           </div>
         </div>
       </div>
@@ -693,13 +914,13 @@
   <script src="js/plugins/jquery.validate.min.js"></script>
   <!-- Plugin for the Wizard, full documentation here: https://github.com/VinceG/twitter-bootstrap-wizard -->
   <script src="js/plugins/jquery.bootstrap-wizard.js"></script>
-  <!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
+  <!--   Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
   <script src="js/plugins/bootstrap-selectpicker.js"></script>
   <!--  Plugin for the DateTimePicker, full documentation here: https://eonasdan.github.io/bootstrap-datetimepicker/ -->
   <script src="js/plugins/bootstrap-datetimepicker.min.js"></script>
   <!--  DataTables.net Plugin, full documentation here: https://datatables.net/  -->
   <script src="js/plugins/jquery.dataTables.min.js"></script>
-  <!--	Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
+  <!--   Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
   <script src="js/plugins/bootstrap-tagsinput.js"></script>
   <!-- Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
   <script src="js/plugins/jasny-bootstrap.min.js"></script>

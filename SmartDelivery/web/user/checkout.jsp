@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -72,7 +74,10 @@
             </li>
 	          <li class="nav-item"><a href="about.jsp" class="nav-link">About</a></li>
 	          <li class="nav-item"><a href="blog.jsp" class="nav-link">Blog</a></li>
+	          <li class="nav-item"><a href="join.jsp" class="nav-link">Join</a></li>
 	          <li class="nav-item"><a href="login.jsp" class="nav-link">Login</a></li>
+	          <!-- 로그인한 후에만 들어갈 수 있게 해야 함  -->
+	          <li class="nav-item"><a href="deliverycheck.jsp" class="nav-link">DeliveryCheck</a></li>
 	          <li class="nav-item cta cta-colored"><a href="cart.jsp" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
 
 	        </ul>
