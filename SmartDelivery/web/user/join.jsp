@@ -107,69 +107,44 @@
       </div>
     </div>
 
-<!--  
-    <section class="ftco-section contact-section bg-light">
-      <div class="container">
-      	<div class="row d-flex mb-5 contact-info">
-          <div class="w-100"></div>
-          <div class="col-md-3 d-flex">
-          	<div class="info bg-white p-4">
-	            <p><span>Address:</span> 198 West 21th Street, Suite 721 New York NY 10016</p>
-	          </div>
-          </div>
-          <div class="col-md-3 d-flex">
-          	<div class="info bg-white p-4">
-	            <p><span>Phone:</span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
-	          </div>
-          </div>
-          <div class="col-md-3 d-flex">
-          	<div class="info bg-white p-4">
-	            <p><span>Email:</span> <a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
-	          </div>
-          </div>
-          <div class="col-md-3 d-flex">
-          	<div class="info bg-white p-4">
-	            <p><span>Website</span> <a href="#">yoursite.com</a></p>
-	          </div>
-        </div>
-        -->
-        
-        
+
         <div class="join_form_div">
           <div>
-            <form action="login.jsp" class="bg-white p-5 contact-form">
+            <form action="customerjoin.del" method="POST" class="bg-white p-5 contact-form">
               <div class="form-group">
-                <input type="text"  size="10" id="id" name="userid" class="form-control" placeholder="ID">
-                <!-- 
+                <input type="text"  size="7" id="id" name="CUSTOMER_ID" class="form-control" placeholder="ID">
+            
                 <input type="button" class="btn btn-primary py-3 px-20" name="idceck" value="중복확인" />
-                 -->
+       
               </div>
               <div class="form-group">
-                <input type="password"  size="10"  name="userpwd" class="form-control" placeholder="Password">
+                <input type="password"  size="10"  name="CUSTOMER_PWD" class="form-control" placeholder="Password">
               </div>
              <div class="form-group">
-                <input type="password"  size="10"  name="userpwd2" class="form-control" placeholder="Password Check">
+                <input type="password"  size="10" name="CUSTOMER_PWD2" class="form-control" placeholder="Password Check">
               </div>
               <div class="form-group">
-                <input type="text" size="10"  id="name" name="username" class="form-control" placeholder="Name">
+                <input type="text" size="10"  id="name" name="CUSTOMER_NM" class="form-control" placeholder="Name">
               </div>
-              <!-- 추후에 성별은 라디오 버튼으로 바꾸기  -->
-              <div class="form-group">
-                <input type="text"  size="10"  id="gender" name="usergender" class="form-control" placeholder="Gender">
+
+              <div class="form-group">			
+                <input type="text"  size="10"  id="gender"  name="CUSTOMER_GD" class="form-control" placeholder="Gender">
               </div>
-              <!-- 나이는  나중에 select로 바꾸기 -->
+
               <div class="form-group">
-                <input type="text"  size="10" id="age" name="userage" class="form-control" placeholder="Age">
+                <input type="text"  size="10" id="age" name="CUSTOMER_AGE" class="form-control" placeholder="Age">
               </div>
               
               
               <div class="form-group">              
-                <input type="text"  size="10" id="phonenumber" name="userphone" class="form-control" placeholder="Phone Number">
+                <input type="text"  size="10" id="phonenumber" name="CUSTOMER_PHONE" class="form-control" placeholder="Phone Number">
               </div>
               <div class="form-group">
-                <input type="text" size="10"  id="useraddr" name="useraddr" class="form-control" placeholder="Address">
+                <input type="text" size="10"  id="useraddr" name="CUSTOMER_EMAIL" class="form-control" placeholder="Email">
               </div>
-              
+              <div class="form-group">
+                <input type="text" size="10"  id="useraddr" name="CUSTOMER_ADDR" class="form-control" placeholder="Address">
+              </div>
               <div class="form-group">
                 <input type="submit" value="JOIN" class="btn btn-primary py-3 px-5">
               </div>
@@ -267,7 +242,154 @@
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
-
+<script>
+	function joinCheck(obj) {
+		var email = obj.CUSTOMER_EMAIL.value;
+		var regex = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
+		if (!obj.CUSTOMER_ID.value || obj.CUSTOMER_ID.value.trim().length == 0) {
+			alert("아이디가 입력되지 않았습니다.");
+			obj.CUSTOMER_ID.value = "";
+			obj.CUSTOMER_ID.focus();
+			return false;
+		}
+		//아이디 길이 체크
+		if(obj.CUSTOMER_ID.value.length<4 || obj.CUSTOMER_ID.value.length>12){
+			alert("아이디를 4~12자까지 입력해주세요.")
+            obj.CUSTOMER_ID.focus();
+            obj.CUSTOMER_ID.select();
+            return false;
+		
+		}
+		//아이디 유효성 검사 (영문소문자, 숫자만 허용)
+        for (i = 0; i < obj.CUSTOMER_ID.value.length; i++) {
+            ch = obj.CUSTOMER_ID.value.charAt(i)
+            if (!(ch >= '0' && ch <= '9') && !(ch >= 'a' && ch <= 'z')&&!(ch >= 'A' && ch <= 'Z')) {
+                alert("아이디는 대소문자, 숫자만 입력가능합니다.")
+                obj.CUSTOMER_ID.focus()
+                obj.CUSTOMER_ID.select()
+                return false;
+            }
+        }
+		//아이디에 공백 사용하지 않기
+        if (obj.CUSTOMER_ID.value.indexOf(" ") >= 0) {
+            alert("아이디에 공백을 사용할 수 없습니다.")
+            obj.CUSTOMER_ID.focus()
+            obj.CUSTOMER_ID.select()
+            return false;
+        }
+		
+		
+		if (!obj.CUSTOMER_PWD.value
+				|| obj.CUSTOMER_PWD.value.trim().length == 0) {
+			alert("비밀번호가 입력되지 않았습니다.");
+			obj.CUSTOMER_PWD.value = "";
+			obj.CUSTOMER_PWD.focus();
+			return false;
+		}
+		
+		 if (obj.CUSTOMER_PWD.value == obj.CUSTOMER_ID.value) {
+	            alert("아이디와 비밀번호가 같습니다.")
+	            obj.CUSTOMER_PWD.focus()
+	            return false;
+	        }
+		 
+		/*
+		if (obj.CUSTOMER_PWD.value.length < 4 || obj.CUSTOMER_PWD.value.length >12) {
+	            alert("비밀번호를 4~12자까지 입력해주세요.")
+	            obj.CUSTOMER_PWD.focus()
+	            obj.CUSTOMER_PWD.select()
+	            return false;
+	        }
+		 */
+		if (!obj.CUSTOMER_NM.value || obj.CUSTOMER_NM.value.trim().length == 0) {
+			alert("이름이 입력되지 않았습니다.");
+			obj.CUSTOMER_NM.value = "";
+			obj.CUSTOMER_NM.focus();
+			return false;
+		}
+		if(obj.CUSTOMER_NM.value.length<2){
+	            alert("이름을 2자 이상 입력해주십시오.")
+	            obj.CUSTOMER_NM.focus()
+	            return false;
+	     }
+		if (!obj.CUSTOMER_PHONE.value
+				|| obj.CUSTOMER_PHONE.value.trim().length == 0) {
+			alert("번호가 입력되지 않았습니다.");
+			obj.CUSTOMER_PHONE.value = "";
+			obj.CUSTOMER_PHONE.focus();
+			return false;
+		}
+		if (!obj.CUSTOMER_ADDR.value
+				|| obj.CUSTOMER_ADDR.value.trim().length == 0) {
+			alert("주소가 입력되지 않았습니다.");
+			obj.CUSTOMER_ADDR.value = "";
+			obj.CUSTOMER_ADDR.focus();
+			return false;
+		}
+		if (!obj.CUSTOMER_EMAIL.value
+				|| obj.CUSTOMER_EMAIL.value.trim().length == 0) {
+			alert("이메일이 입력되지 않았습니다.");
+			obj.CUSTOMER_EMAIL.value = "";
+			obj.CUSTOMER_EMAIL.focus();
+			return false;
+		}
+		
+		if (regex.test(email) === false) {
+            alert("잘못된 이메일 형식입니다.");
+            obj.CUSTOMER_EMAIL.value=""
+            obj.CUSTOMER_EMAIL.focus()
+            return false;
+        }
+	}
+	$(document).ready(function() {
+		$('input[name="CUSTOMER_PWD2"]').keyup(function() {
+			var pw = $('input[name="CUSTOMER_PWD"]').val();
+			var pw2 = $('input[name="CUSTOMER_PWD2"]').val();
+			if(pw != pw2){
+			 $('.same').html('<span style="color:red">비밀번호가 맞지 않아요</span>');
+			 $('input[name="registerok"]').attr('disabled','disabled');
+			 return false;
+				
+			}else if(pw == pw2){
+				$('.same').html('<span style="color:blue">비밀번호가 맞습니다.</span>');
+				$('input[name="registerok"]').removeAttr('disabled');
+				return false;
+			}
+			
+		});
+		$('input[name="registerok"]').click(function() {
+			alert("회원가입이 완료 되었습니다.(환영합니다!)")
+		});
+		$('input[name="idceck"]').click(function() {
+			
+			var CUSTOMER_ID = $('input[name="CUSTOMER_ID"]').val();
+			
+			$.ajax({
+				url:"checkId.mc",
+				data:{'CUSTOMER_ID':CUSTOMER_ID},
+				method:"POST",
+				success:function(result){
+					if(result == '1'){
+						alert("아이디 중복입니다.");
+						$('input[name="registerok"]').attr('disabled','disabled');
+						$('.idsame').html('<span style="color:red">아이디 중복입니다.</span>');
+						return false;
+					}else if(result == '0'){
+						alert("사용 가능한 아이디 입니다.");
+						$('input[name="registerok"]').removeAttr('disabled');
+						$('.idsame').html('<span style="color:red"></span>');
+						return false;
+					}
+					
+					
+					
+				}
+			
+			});
+			
+		});
+	});
+</script>
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
   <script src="js/popper.min.js"></script>
