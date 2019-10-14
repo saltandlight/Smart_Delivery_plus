@@ -30,16 +30,16 @@
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
-  <!-- 
+  <!--  
   <style>
-  .log_form_div{
+  .join_form_div{
 	margin: auto 0;
 	padding: 200px;
    }
 
-   -->
   
-  </style>
+  
+  </style>-->
   <body class="goto-here">
 		<div class="py-1 bg-primary">
     	<div class="container">
@@ -100,8 +100,8 @@
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
-          	<p class="breadcrumbs"><span class="mr-2"><a href="/SmartDelivery/index.jsp">Home</a></span> <span>Login</span></p>
-            <h1 class="mb-0 bread">Login</h1>
+          	<p class="breadcrumbs"><span class="mr-2"><a href="/SmartDelivery/index.jsp">Home</a></span> <span>Join us</span></p>
+            <h1 class="mb-0 bread">Join</h1>
           </div>
         </div>
       </div>
@@ -131,23 +131,47 @@
           	<div class="info bg-white p-4">
 	            <p><span>Website</span> <a href="#">yoursite.com</a></p>
 	          </div>
-          </div>
         </div>
         -->
         
         
-        <div class="log_form_div">
+        <div class="join_form_div">
           <div>
-            <form action="shop.jsp" class="bg-white p-5 contact-form">
+            <form action="login.jsp" class="bg-white p-5 contact-form">
               <div class="form-group">
-                <input type="text" size="10" id="id" name="userid" class="form-control" placeholder="ID">
+                <input type="text"  size="10" id="id" name="userid" class="form-control" placeholder="ID">
+                <!-- 
+                <input type="button" class="btn btn-primary py-3 px-20" name="idceck" value="중복확인" />
+                 -->
               </div>
               <div class="form-group">
-                <input type="text" size="10" id="pwd" name="userpwd" class="form-control" placeholder="Password">
+                <input type="password"  size="10"  name="userpwd" class="form-control" placeholder="Password">
               </div>
-             
+             <div class="form-group">
+                <input type="password"  size="10"  name="userpwd2" class="form-control" placeholder="Password Check">
+              </div>
               <div class="form-group">
-                <input type="submit" size="10" value="LOGIN" class="btn btn-primary py-3 px-5">
+                <input type="text" size="10"  id="name" name="username" class="form-control" placeholder="Name">
+              </div>
+              <!-- 추후에 성별은 라디오 버튼으로 바꾸기  -->
+              <div class="form-group">
+                <input type="text"  size="10"  id="gender" name="usergender" class="form-control" placeholder="Gender">
+              </div>
+              <!-- 나이는  나중에 select로 바꾸기 -->
+              <div class="form-group">
+                <input type="text"  size="10" id="age" name="userage" class="form-control" placeholder="Age">
+              </div>
+              
+              
+              <div class="form-group">              
+                <input type="text"  size="10" id="phonenumber" name="userphone" class="form-control" placeholder="Phone Number">
+              </div>
+              <div class="form-group">
+                <input type="text" size="10"  id="useraddr" name="useraddr" class="form-control" placeholder="Address">
+              </div>
+              
+              <div class="form-group">
+                <input type="submit" value="JOIN" class="btn btn-primary py-3 px-5">
               </div>
             </form> 
              
@@ -192,6 +216,7 @@
                 <li><a href="about.jsp" class="py-2 d-block">About</a></li>
                 <li><a href="#" class="py-2 d-block">Journal</a></li>
                 <li><a href="login.jsp" class="py-2 d-block">Login</a></li>
+                
               </ul>
             </div>
           </div>

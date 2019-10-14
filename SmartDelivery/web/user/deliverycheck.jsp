@@ -30,14 +30,13 @@
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
-  <!-- 
   <style>
-  .log_form_div{
+  .join_form_div{
 	margin: auto 0;
 	padding: 200px;
    }
 
-   -->
+  
   
   </style>
   <body class="goto-here">
@@ -86,7 +85,7 @@
 	          <li class="nav-item"><a href="blog.jsp" class="nav-link">Blog</a></li>
 	          <li class="nav-item"><a href="join.jsp" class="nav-link">Join</a></li>
 	          <li class="nav-item active"><a href="login.jsp" class="nav-link">Login</a></li>
-	          <!-- 로그인한 후에만 들어갈 수 있게 해야 함  -->
+	           <!-- 로그인한 후에만 들어갈 수 있게 해야 함  -->
 	          <li class="nav-item"><a href="deliverycheck.jsp" class="nav-link">DeliveryCheck</a></li>
 	          <li class="nav-item cta cta-colored"><a href="cart.jsp" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
 
@@ -96,25 +95,25 @@
 	  </nav>
     <!-- END nav -->
 
+   
     <div class="hero-wrap hero-bread" style="background-image: url('images/bg_1.jpg');">
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
-          	<p class="breadcrumbs"><span class="mr-2"><a href="/SmartDelivery/index.jsp">Home</a></span> <span>Login</span></p>
-            <h1 class="mb-0 bread">Login</h1>
+          	<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Delivery Check</span></p>
+            <h1 class="mb-0 bread">Delivery Check</h1>
           </div>
         </div>
       </div>
     </div>
 
-<!--  
     <section class="ftco-section contact-section bg-light">
       <div class="container">
       	<div class="row d-flex mb-5 contact-info">
           <div class="w-100"></div>
           <div class="col-md-3 d-flex">
           	<div class="info bg-white p-4">
-	            <p><span>Address:</span> 198 West 21th Street, Suite 721 New York NY 10016</p>
+	            <p><span>Address:</span> 198 West 21th Street, Suite 7<!--  -->21 New York NY 10016</p>
 	          </div>
           </div>
           <div class="col-md-3 d-flex">
@@ -133,35 +132,28 @@
 	          </div>
           </div>
         </div>
-        -->
+        <div class="row block-9">
         
-        
-        <div class="log_form_div">
-          <div>
-            <form action="shop.jsp" class="bg-white p-5 contact-form">
-              <div class="form-group">
-                <input type="text" size="10" id="id" name="userid" class="form-control" placeholder="ID">
-              </div>
-              <div class="form-group">
-                <input type="text" size="10" id="pwd" name="userpwd" class="form-control" placeholder="Password">
-              </div>
-             
-              <div class="form-group">
-                <input type="submit" size="10" value="LOGIN" class="btn btn-primary py-3 px-5">
-              </div>
-            </form> 
-             
-             
-          </div>
-<!--  
-          <div class="col-md-6 d-flex">
-          	<div id="map" class="bg-white"></div>     
-          -->
-          </div>
+          <div class="col-md-6 order-md-last d-flex">
+         
      
+           
+          </div>
+
+          <div class="col-md-6 d-flex">
+            <img src="/SmartDelivery/user/images/map2.JPG">
+          	<!-- <div id="map" class="bg-white"></div> -->
+          	
+          </div>
+          
+          
+          
+          
+          
         </div>
       </div>
     </section>
+
 
     <footer class="ftco-footer ftco-section">
       <div class="container">
@@ -192,6 +184,7 @@
                 <li><a href="about.jsp" class="py-2 d-block">About</a></li>
                 <li><a href="#" class="py-2 d-block">Journal</a></li>
                 <li><a href="login.jsp" class="py-2 d-block">Login</a></li>
+               
               </ul>
             </div>
           </div>
@@ -242,7 +235,30 @@
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=24db095fd4dc301a2e220ac640d5ed83"></script>
+<script>
+var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+    mapOption = { 
+        center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+        level: 3 // 지도의 확대 레벨
+    };
 
+var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+// 마커가 표시될 위치입니다 
+var markerPosition  = new kakao.maps.LatLng(33.450701, 126.570667); 
+
+// 마커를 생성합니다
+var marker = new kakao.maps.Marker({
+    position: markerPosition
+});
+
+// 마커가 지도 위에 표시되도록 설정합니다
+marker.setMap(map);
+
+// 아래 코드는 지도 위의 마커를 제거하는 코드입니다
+// marker.setMap(null);    
+</script>
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
   <script src="js/popper.min.js"></script>
@@ -256,7 +272,6 @@
   <script src="js/jquery.animateNumber.min.js"></script>
   <script src="js/bootstrap-datepicker.js"></script>
   <script src="js/scrollax.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
     
