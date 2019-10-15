@@ -65,19 +65,19 @@
 	          <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
-              	<a class="dropdown-item" href="/SmartDelivery/user/shop.jsp">Shop</a>
-              	<a class="dropdown-item" href="/SmartDelivery/user/wishlist.jsp">Wishlist</a>
-                <a class="dropdown-item" href="/SmartDelivery/user/product-single.html">Single Product</a>
-                <a class="dropdown-item" href="/SmartDelivery/user/cart.jsp">Cart</a>
-                <a class="dropdown-item" href="/SmartDelivery/user/checkout.html">Checkout</a>
+              	<a class="dropdown-item" href="customershop.del">Shop</a>
+              	<a class="dropdown-item" href="customerwish.del">Wishlist</a>
+                <a class="dropdown-item" href="customerproduct.del">Single Product</a>
+                <a class="dropdown-item" href="customercart.del">Cart</a>
+                <a class="dropdown-item" href="customercheck.del">Checkout</a>
               </div>
             </li>
-	          <li class="nav-item"><a href="/SmartDelivery/user/about.jsp" class="nav-link">About</a></li>
-	          <li class="nav-item"><a href="/SmartDelivery/user/blog.jsp" class="nav-link">Blog</a></li>
-	          <li class="nav-item"><a href="/SmartDelivery/user/join.jsp" class="nav-link">Join</a></li>
-	          <li class="nav-item"><a href="/SmartDelivery/user/login.jsp" class="nav-link">Login</a></li>
+	          <li class="nav-item"><a href="customerabout.del" class="nav-link">About</a></li>
+	          <li class="nav-item"><a href="customerblog.del" class="nav-link">Blog</a></li>
+	          <li class="nav-item"><a href="customerjoin.del" class="nav-link">Join</a></li>
+	          <li class="nav-item"><a href="customerlogin.del" class="nav-link">Login</a></li>
 	         <!-- 로그인한 후에만 들어갈 수 있게 해야 함  -->
-	          <li class="nav-item"><a href="/SmartDelivery/user/deliverycheck.jsp" class="nav-link">DeliveryCheck</a></li>
+	          <li class="nav-item"><a href="customerdelcheck.del" class="nav-link">DeliveryCheck</a></li>
 	          <li class="nav-item cta cta-colored"><a href="cart.jsp" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
 
 	        </ul>
@@ -181,7 +181,7 @@
 									<div class="text text-center">
 										<h2>Vegetables</h2>
 										<p>Protect the health of every home</p>
-										<p><a href="/SmartDelivery/user/shop.jsp" class="btn btn-primary">Shop now</a></p>
+										<p><a href="customershop.del" class="btn btn-primary">Shop now</a></p>
 									</div>
 								</div>
 							</div>
@@ -243,7 +243,7 @@
 	    					</div>
 	    					<div class="bottom-area d-flex px-3">
 	    						<div class="m-auto d-flex">
-	    							<a href="/SmartDelivery/user/shop.jsp" class="add-to-cart d-flex justify-content-center align-items-center text-center">
+	    							<a href="customershop.del" class="add-to-cart d-flex justify-content-center align-items-center text-center">
 	    								<span><i class="ion-ios-menu"></i></span>
 	    							</a>
 	    							<a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
@@ -271,7 +271,7 @@
 	    					</div>
     						<div class="bottom-area d-flex px-3">
 	    						<div class="m-auto d-flex">
-	    							<a href="/SmartDelivery/user/shop.jsp" class="add-to-cart d-flex justify-content-center align-items-center text-center">
+	    							<a href="customershop.del" class="add-to-cart d-flex justify-content-center align-items-center text-center">
 	    								<span><i class="ion-ios-menu"></i></span>
 	    							</a>
 	    							<a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
@@ -299,7 +299,7 @@
 	    					</div>
     						<div class="bottom-area d-flex px-3">
 	    						<div class="m-auto d-flex">
-	    							<a href="/SmartDelivery/user/shop.jsp" class="add-to-cart d-flex justify-content-center align-items-center text-center">
+	    							<a href="customershop.del" class="add-to-cart d-flex justify-content-center align-items-center text-center">
 	    								<span><i class="ion-ios-menu"></i></span>
 	    							</a>
 	    							<a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
@@ -358,7 +358,7 @@
 	    					</div>
 	    					<div class="bottom-area d-flex px-3">
 	    						<div class="m-auto d-flex">
-	    							<a href="/SmartDelivery/user/shop.jsp" class="add-to-cart d-flex justify-content-center align-items-center text-center">
+	    							<a href="customershop.del" class="add-to-cart d-flex justify-content-center align-items-center text-center">
 	    								<span><i class="ion-ios-menu"></i></span>
 	    							</a>
 	    							<a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
@@ -386,7 +386,7 @@
 	    					</div>
     						<div class="bottom-area d-flex px-3">
 	    						<div class="m-auto d-flex">
-	    							<a href="/SmartDelivery/user/shop.jsp" class="add-to-cart d-flex justify-content-center align-items-center text-center">
+	    							<a href="customershop.del" class="add-to-cart d-flex justify-content-center align-items-center text-center">
 	    								<span><i class="ion-ios-menu"></i></span>
 	    							</a>
 	    							<a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
@@ -414,7 +414,7 @@
 	    					</div>
     						<div class="bottom-area d-flex px-3">
 	    						<div class="m-auto d-flex">
-	    							<a href="/SmartDelivery/user/shop.jsp" class="add-to-cart d-flex justify-content-center align-items-center text-center">
+	    							<a href="customershop.del" class="add-to-cart d-flex justify-content-center align-items-center text-center">
 	    								<span><i class="ion-ios-menu"></i></span>
 	    							</a>
 	    							<a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
@@ -442,7 +442,7 @@
 	    					</div>
     						<div class="bottom-area d-flex px-3">
 	    						<div class="m-auto d-flex">
-	    							<a href="/SmartDelivery/user/shop.jsp" class="add-to-cart d-flex justify-content-center align-items-center text-center">
+	    							<a href="customershop.del" class="add-to-cart d-flex justify-content-center align-items-center text-center">
 	    								<span><i class="ion-ios-menu"></i></span>
 	    							</a>
 	    							<a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
@@ -635,7 +635,7 @@
             <div class="ftco-footer-widget mb-4 ml-md-5">
               <h2 class="ftco-heading-2">Menu</h2>
               <ul class="list-unstyled">
-                <li><a href="shop.jsp" class="py-2 d-block">Shop</a></li>
+                <li><a href="customershop.del" class="py-2 d-block">Shop</a></li>
                 <li><a href="about.jsp" class="py-2 d-block">About</a></li>
                 <li><a href="#" class="py-2 d-block">Journal</a></li>
                 <li><a href="login.jsp" class="py-2 d-block">Login</a></li>
