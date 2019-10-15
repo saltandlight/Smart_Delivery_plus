@@ -1,70 +1,169 @@
 package com.vo;
 
 public class Customer {
-  String id;
-  String pwd;
-  String name;
-  String addr;
-  String phone;
-  String gender;
-  Integer age;
+  String customer_id;
+  String customer_pwd;
+  String customer_name;
+  String customer_phone;
+  String customer_addr;
+  String customer_gender;
+  Integer customer_age;
+  Integer admin_check;
+
   
   
-public Customer(String id, String pwd) {
-	this.id = id;
-	this.pwd = pwd;
-}
-public Customer(String id, String pwd, String name, String phone, String addr,  String gender, Integer age) {
-	this.id = id;
-	this.pwd = pwd;
-	this.name = name;
-	this.addr = addr;
-	this.phone = phone;
-	this.gender = gender;
-	this.age = age;
-}
-public String getId() {
-	return id;
-}
-public void setId(String id) {
-	this.id = id;
-}
-public String getPwd() {
-	return pwd;
-}
-public void setPwd(String pwd) {
-	this.pwd = pwd;
-}
-public String getName() {
-	return name;
-}
-public void setName(String name) {
-	this.name = name;
-}
-public String getAddr() {
-	return addr;
-}
-public void setAddr(String addr) {
-	this.addr = addr;
-}
-public String getGender() {
-	return gender;
-}
-public void setGender(String gender) {
-	this.gender = gender;
-}
-public Integer getAge() {
-	return age;
-}
-public void setAge(Integer age) {
-	this.age = age;
-}
-public String getPhone() {
-	return phone;
-}
-public void setPhone(String phone) {
-	this.phone = phone;
-}
   
+  public Customer() {
+
+  }
+
+
+
+
+  public Customer(String customer_id, String customer_pwd) {
+	super();
+	this.customer_id = customer_id;
+	this.customer_pwd = customer_pwd;
+  }
+
+
+
+
+public Customer(String customer_id, String customer_pwd, String customer_name, String customer_phone,
+		String customer_addr, String customer_gender, Integer customer_age, Integer admin_check) {
+	super();
+	this.customer_id = customer_id;
+	this.customer_pwd = customer_pwd;
+	this.customer_name = customer_name;
+	this.customer_phone = customer_phone;
+	this.customer_addr = customer_addr;
+	this.customer_gender = customer_gender;
+	this.customer_age = customer_age;
+	this.admin_check = admin_check;
+}
+
+
+
+
+public String getCustomer_id() {
+	return customer_id;
+}
+
+
+
+
+public void setCustomer_id(String customer_id) {
+	this.customer_id = customer_id;
+}
+
+
+
+
+public String getCustomer_pwd() {
+	return customer_pwd;
+}
+
+
+
+
+public void setCustomer_pwd(String customer_pwd) {
+	this.customer_pwd = customer_pwd;
+}
+
+
+
+
+public String getCustomer_name() {
+	return customer_name;
+}
+
+
+
+
+public void setCustomer_name(String customer_name) {
+	this.customer_name = customer_name;
+}
+
+
+
+
+public String getCustomer_phone() {
+	return customer_phone;
+}
+
+
+
+
+public void setCustomer_phone(String customer_phone) {
+	this.customer_phone = customer_phone;
+}
+
+
+
+
+public String getCustomer_addr() {
+	return customer_addr;
+}
+
+
+
+
+public void setCustomer_addr(String customer_addr) {
+	this.customer_addr = customer_addr;
+}
+
+
+
+
+public String getCustomer_gender() {
+	return customer_gender;
+}
+
+
+
+
+public void setCustomer_gender(String customer_gender) {
+	this.customer_gender = customer_gender;
+}
+
+
+
+
+public Integer getCustomer_age() {
+	return customer_age;
+}
+
+
+
+
+public void setCustomer_age(Integer customer_age) {
+	this.customer_age = customer_age;
+}
+
+
+
+
+public Integer getAdmin_check() {
+	return admin_check;
+}
+
+
+
+
+public void setAdmin_check(Integer admin_check) {
+	this.admin_check = admin_check;
+}
+
+
+
+
+@Override
+public String toString() {
+	return "Customer [customer_id=" + customer_id + ", customer_pwd=" + customer_pwd + ", customer_name="
+			+ customer_name + ", customer_phone=" + customer_phone + ", customer_addr=" + customer_addr
+			+ ", customer_gender=" + customer_gender + ", customer_age=" + customer_age + ", admin_check=" + admin_check
+			+ "]";
+}
+
   
 }

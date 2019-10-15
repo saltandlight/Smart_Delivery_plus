@@ -11,24 +11,166 @@
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="/SmartDelivery/user/css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="/SmartDelivery/user/css/animate.css">
     
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="/SmartDelivery/user/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/SmartDelivery/user/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/SmartDelivery/user/css/magnific-popup.css">
 
-    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="/SmartDelivery/user/css/aos.css">
 
-    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link rel="stylesheet" href="/SmartDelivery/user/css/ionicons.min.css">
 
-    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="css/jquery.timepicker.css">
+    <link rel="stylesheet" href="/SmartDelivery/user/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="/SmartDelivery/user/css/jquery.timepicker.css">
 
     
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/SmartDelivery/user/css/flaticon.css">
+    <link rel="stylesheet" href="/SmartDelivery/user/css/icomoon.css">
+    <link rel="stylesheet" href="/SmartDelivery/user/css/style.css">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+
+    <script>
+	function joinCheck(obj) {		
+		var regex = /^(?=.*[a-zA-Z])((?=.*\d)|(?=.*\W)).{6,20}$/;
+		if (!obj.CUSTOMER_ID.value || obj.CUSTOMER_ID.value.trim().length == 0) {
+			alert("아이디가 입력되지 않았습니다.");
+			obj.CUSTOMER_ID.value = "";
+			obj.CUSTOMER_ID.focus();
+			return false;
+		}
+		//아이디 길이 체크
+		if(obj.CUSTOMER_ID.value.length<4 || obj.CUSTOMER_ID.value.length>12){
+			alert("아이디를 4~12자까지 입력해주세요.")
+            obj.CUSTOMER_ID.focus();
+            obj.CUSTOMER_ID.select();
+            return false;
+		
+		}
+		//아이디 유효성 검사 (영문소문자, 숫자만 허용)
+        for (i = 0; i < obj.CUSTOMER_ID.value.length; i++) {
+            ch = obj.CUSTOMER_ID.value.charAt(i);
+            if (!(ch >= '0' && ch <= '9') && !(ch >= 'a' && ch <= 'z')&&!(ch >= 'A' && ch <= 'Z')) {
+                alert("아이디는 대소문자, 숫자만 입력가능합니다.")
+                obj.CUSTOMER_ID.focus();
+                obj.CUSTOMER_ID.select();
+                return false;
+            }
+        }
+		//아이디에 공백 사용하지 않기
+        if (obj.CUSTOMER_ID.value.indexOf(" ") >= 0) {
+            alert("아이디에 공백을 사용할 수 없습니다.")
+            obj.CUSTOMER_ID.focus();
+            obj.CUSTOMER_ID.select();
+            return false;
+        }
+		
+		
+		if (!obj.CUSTOMER_PWD.value
+				|| obj.CUSTOMER_PWD.value.trim().length == 0) {
+			alert("비밀번호가 입력되지 않았습니다.");
+			obj.CUSTOMER_PWD.value = "";
+			obj.CUSTOMER_PWD.focus();
+			return false;
+		}
+		
+		 if (obj.CUSTOMER_PWD.value == obj.CUSTOMER_ID.value) {
+	            alert("아이디와 비밀번호가 같습니다.")
+	            obj.CUSTOMER_PWD.focus();
+	            return false;
+	      }
+		 
+		
+		
+		if (regex.test(obj.CUSTOMER_PWD.value) === false) {
+			 alert("비밀번호가 6~20 영문 대소문자와 최소 1개의 숫자 혹은 특수 문자를 포함해야 합니다.");
+	         obj.CUSTOMER_PWD.focus();
+	         obj.CUSTOMER_PWD.select();
+	         return false;
+        }
+		
+		if (!obj.CUSTOMER_NM.value || obj.CUSTOMER_NM.value.trim().length == 0) {
+			alert("이름이 입력되지 않았습니다.");
+			obj.CUSTOMER_NM.value = "";
+			obj.CUSTOMER_NM.focus();
+			return false;
+		}
+		if(obj.CUSTOMER_NM.value.length<2){
+	            alert("이름을 2자 이상 입력해주십시오.");
+	            obj.CUSTOMER_NM.focus();
+	            return false;
+	     }
+		if (!obj.CUSTOMER_PHONE.value
+				|| obj.CUSTOMER_PHONE.value.trim().length == 0) {
+			alert("번호가 입력되지 않았습니다.");
+			obj.CUSTOMER_PHONE.value = "";
+			obj.CUSTOMER_PHONE.focus();
+			return false;
+		}
+		if (!obj.CUSTOMER_ADDR.value
+				|| obj.CUSTOMER_ADDR.value.trim().length == 0) {
+			alert("주소가 입력되지 않았습니다.");
+			obj.CUSTOMER_ADDR.value = "";
+			obj.CUSTOMER_ADDR.focus();
+			return false;
+		}
+	}
+	
+	
+	$(document).ready(function() {
+		$('input[name="CUSTOMER_PWD2"]').keyup(function() {
+			var pw = $('input[name="CUSTOMER_PWD"]').val();
+			var pw2 = $('input[name="CUSTOMER_PWD2"]').val();
+			if(pw != pw2 || pw2 == ''){
+			 $('.same').html('<span style="color:red">비밀번호가 맞지 않아요</span>');
+			 $('input[name="registerok"]').attr('disabled','disabled');
+			 return false;
+				
+			}else if(pw == pw2){
+				$('.same').html('<span style="color:blue">비밀번호가 맞습니다.</span>');
+				$('input[name="registerok"]').removeAttr('disabled');
+				return false;
+			}
+			
+		});
+		$('input[name="registerok"]').click(function() {
+			alert("회원가입이 완료 되었습니다.(환영합니다!)")
+		});
+		$('input[name="idceck"]').click(function() {
+			
+			var CUSTOMER_ID = $('input[name="CUSTOMER_ID"]').val();
+			
+			$.ajax({
+				url:"checkId.del",
+				data:{'CUSTOMER_ID':CUSTOMER_ID},
+				method:"POST",
+				success:function(result){
+					if(result == '1'){
+						alert("아이디 중복입니다.");
+						$('input[name="registerok"]').attr('disabled','disabled');
+						$('.idsame').html('<span style="color:red">아이디 중복입니다.</span>');
+						return false;
+					}else if(result == '0'){
+						alert("사용 가능한 아이디 입니다.");
+						$('input[name="registerok"]').removeAttr('disabled');
+						$('.idsame').html('<span style="color:red"></span>');
+						return false;
+					}
+					
+					
+					
+				}
+			
+			});
+			
+		});
+	});
+</script>
+
+    
+    
   </head>
   <!--  
   <style>
@@ -50,10 +192,7 @@
 					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
 						    <span class="text">+ 1235 2355 98</span>
 					    </div>
-					    <div class="col-md pr-4 d-flex topper align-items-center">
-					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
-						    <span class="text">youremail@email.com</span>
-					    </div>
+					    
 					    <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right">
 						    <span class="text">3-5 Business days delivery &amp; Free Returns</span>
 					    </div>
@@ -96,7 +235,7 @@
 	  </nav>
     <!-- END nav -->
 
-    <div class="hero-wrap hero-bread" style="background-image: url('images/bg_1.jpg');">
+    <div class="hero-wrap hero-bread" style="background-image: url('/SmartDelivery/user/images/bg_1.jpg');">
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
@@ -110,44 +249,42 @@
 
         <div class="join_form_div">
           <div>
-            <form action="customerjoin.del" method="POST" class="bg-white p-5 contact-form">
-              <div class="form-group">
+            <form action="customerjoinimpl.del" method="POST" onclick="return joinCheck(this)" class="bg-white p-5 contact-form">
+             <div class="form-group"> 
                 <input type="text"  size="7" id="id" name="CUSTOMER_ID" class="form-control" placeholder="ID">
             
                 <input type="button" class="btn btn-primary py-3 px-20" name="idceck" value="중복확인" />
        
-              </div>
+               </div>
               <div class="form-group">
                 <input type="password"  size="10"  name="CUSTOMER_PWD" class="form-control" placeholder="Password">
               </div>
-             <div class="form-group">
-                <input type="password"  size="10" name="CUSTOMER_PWD2" class="form-control" placeholder="Password Check">
-              </div>
-              <div class="form-group">
+             <div class="form-group"> 
+                <input type="password"  size="10" name="CUSTOMER_PWD2" onchange="isSame()" class="form-control" placeholder="Password Check">
+                <span class="same"></span>
+             </div> 
+             <div class="form-group"> 
                 <input type="text" size="10"  id="name" name="CUSTOMER_NM" class="form-control" placeholder="Name">
-              </div>
+            </div> 
 
-              <div class="form-group">			
+             <div class="form-group">	
                 <input type="text"  size="10"  id="gender"  name="CUSTOMER_GD" class="form-control" placeholder="Gender">
-              </div>
+             </div> 
 
-              <div class="form-group">
+              <div class="form-group"> 
                 <input type="text"  size="10" id="age" name="CUSTOMER_AGE" class="form-control" placeholder="Age">
-              </div>
+              </div> 
               
-              
-              <div class="form-group">              
+            <div class="form-group">   
                 <input type="text"  size="10" id="phonenumber" name="CUSTOMER_PHONE" class="form-control" placeholder="Phone Number">
-              </div>
-              <div class="form-group">
-                <input type="text" size="10"  id="useraddr" name="CUSTOMER_EMAIL" class="form-control" placeholder="Email">
-              </div>
-              <div class="form-group">
+             </div> 
+             
+             <div class="form-group">
                 <input type="text" size="10"  id="useraddr" name="CUSTOMER_ADDR" class="form-control" placeholder="Address">
-              </div>
-              <div class="form-group">
-                <input type="submit" value="JOIN" class="btn btn-primary py-3 px-5">
-              </div>
+             </div>
+             <div class="form-group">
+                <input type="submit" value="JOIN" name="registerok" class="btn btn-primary py-3 px-5" >
+              </div> 
             </form> 
              
              
@@ -242,170 +379,23 @@
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
-<script>
-	function joinCheck(obj) {
-		var email = obj.CUSTOMER_EMAIL.value;
-		var regex = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
-		if (!obj.CUSTOMER_ID.value || obj.CUSTOMER_ID.value.trim().length == 0) {
-			alert("아이디가 입력되지 않았습니다.");
-			obj.CUSTOMER_ID.value = "";
-			obj.CUSTOMER_ID.focus();
-			return false;
-		}
-		//아이디 길이 체크
-		if(obj.CUSTOMER_ID.value.length<4 || obj.CUSTOMER_ID.value.length>12){
-			alert("아이디를 4~12자까지 입력해주세요.")
-            obj.CUSTOMER_ID.focus();
-            obj.CUSTOMER_ID.select();
-            return false;
-		
-		}
-		//아이디 유효성 검사 (영문소문자, 숫자만 허용)
-        for (i = 0; i < obj.CUSTOMER_ID.value.length; i++) {
-            ch = obj.CUSTOMER_ID.value.charAt(i)
-            if (!(ch >= '0' && ch <= '9') && !(ch >= 'a' && ch <= 'z')&&!(ch >= 'A' && ch <= 'Z')) {
-                alert("아이디는 대소문자, 숫자만 입력가능합니다.")
-                obj.CUSTOMER_ID.focus()
-                obj.CUSTOMER_ID.select()
-                return false;
-            }
-        }
-		//아이디에 공백 사용하지 않기
-        if (obj.CUSTOMER_ID.value.indexOf(" ") >= 0) {
-            alert("아이디에 공백을 사용할 수 없습니다.")
-            obj.CUSTOMER_ID.focus()
-            obj.CUSTOMER_ID.select()
-            return false;
-        }
-		
-		
-		if (!obj.CUSTOMER_PWD.value
-				|| obj.CUSTOMER_PWD.value.trim().length == 0) {
-			alert("비밀번호가 입력되지 않았습니다.");
-			obj.CUSTOMER_PWD.value = "";
-			obj.CUSTOMER_PWD.focus();
-			return false;
-		}
-		
-		 if (obj.CUSTOMER_PWD.value == obj.CUSTOMER_ID.value) {
-	            alert("아이디와 비밀번호가 같습니다.")
-	            obj.CUSTOMER_PWD.focus()
-	            return false;
-	        }
-		 
-		/*
-		if (obj.CUSTOMER_PWD.value.length < 4 || obj.CUSTOMER_PWD.value.length >12) {
-	            alert("비밀번호를 4~12자까지 입력해주세요.")
-	            obj.CUSTOMER_PWD.focus()
-	            obj.CUSTOMER_PWD.select()
-	            return false;
-	        }
-		 */
-		if (!obj.CUSTOMER_NM.value || obj.CUSTOMER_NM.value.trim().length == 0) {
-			alert("이름이 입력되지 않았습니다.");
-			obj.CUSTOMER_NM.value = "";
-			obj.CUSTOMER_NM.focus();
-			return false;
-		}
-		if(obj.CUSTOMER_NM.value.length<2){
-	            alert("이름을 2자 이상 입력해주십시오.")
-	            obj.CUSTOMER_NM.focus()
-	            return false;
-	     }
-		if (!obj.CUSTOMER_PHONE.value
-				|| obj.CUSTOMER_PHONE.value.trim().length == 0) {
-			alert("번호가 입력되지 않았습니다.");
-			obj.CUSTOMER_PHONE.value = "";
-			obj.CUSTOMER_PHONE.focus();
-			return false;
-		}
-		if (!obj.CUSTOMER_ADDR.value
-				|| obj.CUSTOMER_ADDR.value.trim().length == 0) {
-			alert("주소가 입력되지 않았습니다.");
-			obj.CUSTOMER_ADDR.value = "";
-			obj.CUSTOMER_ADDR.focus();
-			return false;
-		}
-		if (!obj.CUSTOMER_EMAIL.value
-				|| obj.CUSTOMER_EMAIL.value.trim().length == 0) {
-			alert("이메일이 입력되지 않았습니다.");
-			obj.CUSTOMER_EMAIL.value = "";
-			obj.CUSTOMER_EMAIL.focus();
-			return false;
-		}
-		
-		if (regex.test(email) === false) {
-            alert("잘못된 이메일 형식입니다.");
-            obj.CUSTOMER_EMAIL.value=""
-            obj.CUSTOMER_EMAIL.focus()
-            return false;
-        }
-	}
-	$(document).ready(function() {
-		$('input[name="CUSTOMER_PWD2"]').keyup(function() {
-			var pw = $('input[name="CUSTOMER_PWD"]').val();
-			var pw2 = $('input[name="CUSTOMER_PWD2"]').val();
-			if(pw != pw2){
-			 $('.same').html('<span style="color:red">비밀번호가 맞지 않아요</span>');
-			 $('input[name="registerok"]').attr('disabled','disabled');
-			 return false;
-				
-			}else if(pw == pw2){
-				$('.same').html('<span style="color:blue">비밀번호가 맞습니다.</span>');
-				$('input[name="registerok"]').removeAttr('disabled');
-				return false;
-			}
-			
-		});
-		$('input[name="registerok"]').click(function() {
-			alert("회원가입이 완료 되었습니다.(환영합니다!)")
-		});
-		$('input[name="idceck"]').click(function() {
-			
-			var CUSTOMER_ID = $('input[name="CUSTOMER_ID"]').val();
-			
-			$.ajax({
-				url:"checkId.mc",
-				data:{'CUSTOMER_ID':CUSTOMER_ID},
-				method:"POST",
-				success:function(result){
-					if(result == '1'){
-						alert("아이디 중복입니다.");
-						$('input[name="registerok"]').attr('disabled','disabled');
-						$('.idsame').html('<span style="color:red">아이디 중복입니다.</span>');
-						return false;
-					}else if(result == '0'){
-						alert("사용 가능한 아이디 입니다.");
-						$('input[name="registerok"]').removeAttr('disabled');
-						$('.idsame').html('<span style="color:red"></span>');
-						return false;
-					}
-					
-					
-					
-				}
-			
-			});
-			
-		});
-	});
-</script>
-  <script src="js/jquery.min.js"></script>
-  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.easing.1.3.js"></script>
-  <script src="js/jquery.waypoints.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/aos.js"></script>
-  <script src="js/jquery.animateNumber.min.js"></script>
-  <script src="js/bootstrap-datepicker.js"></script>
-  <script src="js/scrollax.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-  <script src="js/google-map.js"></script>
-  <script src="js/main.js"></script>
-    
+
   </body>
+    <script src="/SmartDelivery/user/js/jquery.min.js"></script>
+  <script src="/SmartDelivery/user/js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="/SmartDelivery/user/js/popper.min.js"></script>
+  <script src="/SmartDelivery/user/js/bootstrap.min.js"></script>
+  <script src="/SmartDelivery/user/js/jquery.easing.1.3.js"></script>
+  <script src="/SmartDelivery/user/js/jquery.waypoints.min.js"></script>
+  <script src="/SmartDelivery/user/js/jquery.stellar.min.js"></script>
+  <script src="/SmartDelivery/user/js/owl.carousel.min.js"></script>
+  <script src="/SmartDelivery/user/js/jquery.magnific-popup.min.js"></script>
+  <script src="/SmartDelivery/user/js/aos.js"></script>
+  <script src="/SmartDelivery/user/js/jquery.animateNumber.min.js"></script>
+  <script src="/SmartDelivery/user/js/bootstrap-datepicker.js"></script>
+  <script src="/SmartDelivery/user/js/scrollax.min.js"></script>
+  <script src="/SmartDelivery/user/js/google-map.js"></script>
+  <script src="/SmartDelivery/user/js/main.js"></script>
+  
+    
 </html>

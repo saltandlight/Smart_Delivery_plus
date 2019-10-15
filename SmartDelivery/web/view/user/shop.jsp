@@ -11,24 +11,24 @@
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="/SmartDelivery/css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="/SmartDelivery/css/animate.css">
     
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="/SmartDelivery/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/SmartDelivery/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/SmartDelivery/css/magnific-popup.css">
 
-    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="/SmartDelivery/css/aos.css">
 
-    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link rel="stylesheet" href="/SmartDelivery/css/ionicons.min.css">
 
-    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="css/jquery.timepicker.css">
+    <link rel="stylesheet" href="/SmartDelivery/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="/SmartDelivery/css/jquery.timepicker.css">
 
     
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/SmartDelivery/css/flaticon.css">
+    <link rel="stylesheet" href="/SmartDelivery/css/icomoon.css">
+    <link rel="stylesheet" href="/SmartDelivery/css/style.css">
   </head>
   <body class="goto-here">
 		<div class="py-1 bg-primary">
@@ -75,7 +75,7 @@
 	          <li class="nav-item"><a href="about.jsp" class="nav-link">About</a></li>
 	          <li class="nav-item"><a href="blog.jsp" class="nav-link">Blog</a></li>
 	          <li class="nav-item"><a href="join.jsp" class="nav-link">Join</a></li>
-	          <li class="nav-item"><a href="login.jsp" class="nav-link">Login</a></li>
+	          <li class="nav-item"><a href="customerlogin.del" class="nav-link">Login</a></li>
 	          <!-- 로그인한 후에만 들어갈 수 있게 해야 함  -->
 	          <li class="nav-item"><a href="deliverycheck.jsp" class="nav-link">DeliveryCheck</a></li>
 	          <li class="nav-item cta cta-colored"><a href="cart.jsp" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
@@ -572,21 +572,20 @@
 
 
   </body>
-    <script src="js/jquery.min.js"></script>
-  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.easing.1.3.js"></script>
-  <script src="js/jquery.waypoints.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/aos.js"></script>
-  <script src="js/jquery.animateNumber.min.js"></script>
-  <script src="js/bootstrap-datepicker.js"></script>
-  <script src="js/scrollax.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-  <script src="js/google-map.js"></script>
-  <script src="js/main.js"></script>
+  <script src="/SmartDelivery/js/jquery.min.js"></script>
+  <script src="/SmartDelivery/js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="/SmartDelivery/js/popper.min.js"></script>
+  <script src="/SmartDelivery/js/bootstrap.min.js"></script>
+  <script src="/SmartDelivery/js/jquery.easing.1.3.js"></script>
+  <script src="/SmartDelivery/js/jquery.waypoints.min.js"></script>
+  <script src="/SmartDelivery/js/jquery.stellar.min.js"></script>
+  <script src="/SmartDelivery/js/owl.carousel.min.js"></script>
+  <script src="/SmartDelivery/js/jquery.magnific-popup.min.js"></script>
+  <script src="/SmartDelivery/js/aos.js"></script>
+  <script src="/SmartDelivery/js/jquery.animateNumber.min.js"></script>
+  <script src="/SmartDelivery/js/bootstrap-datepicker.js"></script>
+  <script src="/SmartDelivery/js/scrollax.min.js"></script>
+  <script src="/SmartDelivery/js/google-map.js"></script>
+  <script src="/SmartDelivery/js/main.js"></script>
     
 </html>
