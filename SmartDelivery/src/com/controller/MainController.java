@@ -9,29 +9,29 @@ public class MainController {
 
 	@RequestMapping("/customermain.del")
 	public ModelAndView main(ModelAndView mv){
-		mv.addObject("navi","navi");
-		mv.addObject("footer","footer");
-		mv.addObject("center", "index");
-		mv.addObject("entire", "entire");
+		mv.addObject("center","center");
 		mv.setViewName("index");
 		return mv;
 	}
 	
 	@RequestMapping("/customerjoin.del")
 	public ModelAndView customerjoin(ModelAndView mv) {
-		mv.setViewName("user/join");
+		mv.addObject("center","user/join");
+		mv.setViewName("index");
 		return mv;
 	}
 	
 	@RequestMapping("/customerlogin.del")
 	public ModelAndView customerlogin(ModelAndView mv) {
-		mv.setViewName("user/login");
+		mv.addObject("center","user/login");
+		mv.setViewName("index");
 		return mv;
 	}
 	
 	@RequestMapping("/customershop.del")
 	public ModelAndView shop(ModelAndView mv) {
-		mv.setViewName("user/shop");
+		mv.addObject("center","user/shop");
+		mv.setViewName("index");
 		return mv;
 	}
 	

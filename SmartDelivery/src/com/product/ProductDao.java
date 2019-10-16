@@ -9,7 +9,7 @@ import com.frame.Dao;
 import com.mapper.ProductMapper;
 import com.vo.Product;
 
-@Repository("pado")
+@Repository("pdao")
 public class ProductDao implements Dao<String, Product> {
 
 	@Autowired

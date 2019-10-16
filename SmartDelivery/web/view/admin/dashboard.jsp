@@ -786,8 +786,8 @@
             
             
             <!-- Kakao Map START -->
-            <div>
-            
+            <div class="map">
+               
             
             </div>
             <!-- Kakao Map END -->
