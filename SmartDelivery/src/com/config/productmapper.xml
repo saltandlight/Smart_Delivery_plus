@@ -13,10 +13,10 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	</select>
 	<insert id="insert" parameterType="product">
 		INSERT INTO PRODUCT VALUES
-		(#{product_id},#{product_name},#{product_price},#{product_pic1},#{product_pic2})
+		(#{product_id},#{product_name},#{product_price},#{product_pic1})
 	</insert>
 	<update id="update" parameterType="product">
-		UPDATE PRODUCT SET PRODUCT_NAME=#{product_name},PRODUCT_PRICE=#{product_price},PRODUCT_PIC1=#{product_pic1}, PRODUCT_PIC2=#{product_pic2}
+		UPDATE PRODUCT SET PRODUCT_NAME=#{product_name},PRODUCT_PRICE=#{product_price},PRODUCT_PIC1=#{product_pic1}
 		 WHERE PRODUCT_ID=#{product_id}
 	</update>
 	<delete id="delete" parameterType="String">

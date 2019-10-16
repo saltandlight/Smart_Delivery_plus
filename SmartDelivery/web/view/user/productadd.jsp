@@ -16,43 +16,21 @@
     </div>
    </div>
 
-        <div class="join_form_div">
+        <div class="pro_add">
           <div>
-            <form action="customerjoinimpl.del" method="POST" onclick="return joinCheck(this)" class="bg-white p-5 contact-form">
-             <div class="form-group"> 
-                <input type="text"  size="7" id="id" name="CUSTOMER_ID" class="form-control" placeholder="ID">
-            
-                <input type="button" class="btn btn-primary py-3 px-20" name="idceck" value="중복확인" />
-       
-               </div>
-              <div class="form-group">
-                <input type="password"  size="10"  name="CUSTOMER_PWD" class="form-control" placeholder="Password">
-              </div>
-             <div class="form-group"> 
-                <input type="password"  size="10" name="CUSTOMER_PWD2" onchange="isSame()" class="form-control" placeholder="Password Check">
-                <span class="same"></span>
-             </div> 
-             <div class="form-group"> 
-                <input type="text" size="10"  id="name" name="CUSTOMER_NM" class="form-control" placeholder="Name">
-            </div> 
-
-             <div class="form-group">	
-                <input type="text"  size="10"  id="gender"  name="CUSTOMER_GD" class="form-control" placeholder="Gender">
-             </div> 
-
-              <div class="form-group"> 
-                <input type="text"  size="10" id="age" name="CUSTOMER_AGE" class="form-control" placeholder="Age">
-              </div> 
-              
-            <div class="form-group">   
-                <input type="text"  size="10" id="phonenumber" name="CUSTOMER_PHONE" class="form-control" placeholder="Phone Number">
-             </div> 
+            <form enctype="multipart/form-data" action="productaddimpl.del" method="POST"  class="bg-white p-5 contact-form">
              
+              <div class="form-group">
+                <input type="text"  size="5" name="PRODUCT_NAME" class="form-control" placeholder="Product Name">
+                <label class="stext-102 cl3" for="name">IMGNAME1</label>
+				<input class="size-111 bor8 stext-102 cl2 p-lr-20" id="pro_img1" type="file" name="mf">
+              </div>
+             
+             <div class="form-group"> 
+                <input type="text" size="10"  name="PRODUCT_PRICE" class="form-control" placeholder="Product Price">
+            </div> 
              <div class="form-group">
-                <input type="text" size="10"  id="useraddr" name="CUSTOMER_ADDR" class="form-control" placeholder="Address">
-             </div>
-             <div class="form-group">
-                <input type="submit" value="JOIN" name="registerok" class="btn btn-primary py-3 px-5" >
+                <input type="submit" value="Add" name="addok" class="btn btn-primary py-3 px-5" >
               </div> 
             </form> 
              
