@@ -5,7 +5,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>SmartDelieveryPlus_main</title>
+      <title>
+    Smart Delivery+
+  </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -32,7 +34,7 @@
     
     <link rel="stylesheet" href="/SmartDelivery/view/user/css/icomoon.css">
      
-   <!-- <link rel="stylesheet" href="/SmartDelivery/view/user/css/style.css">   -->
+    <link rel="stylesheet" href="/SmartDelivery/view/user/css/style.css">  
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     
   <style>
@@ -99,40 +101,7 @@
     <!-- END nav -->
 
 	
-    <section id="home-section" class="hero">
-		  <div class="home-slider owl-carousel">
-	      <div class="slider-item" style="background-image: url(/SmartDelivery/view/user/images/bg_1.jpg);">
-	      	<div class="overlay"></div>
-	        <div class="container">
-	          <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
-
-	            <div class="col-md-12 ftco-animate text-center">
-	              <h1 class="mb-2">We serve Fresh Vegestables &amp; Fruits</h1>
-	              <h2 class="subheading mb-4">We deliver organic vegetables &amp; fruits</h2>
-	              <p><a href="#" class="btn btn-primary">View Details</a></p>
-	            </div>
-
-	          </div>
-	        </div>
-	      </div>
-
-	      <div class="slider-item" style="background-image: url(/SmartDelivery/view/user/images/bg_2.jpg);">
-	      	<div class="overlay"></div>
-	        <div class="container">
-	          <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
-
-	            <div class="col-sm-12 ftco-animate text-center">
-	              <h1 class="mb-2">100% Fresh &amp; Organic Foods</h1>
-	              <h2 class="subheading mb-4">We deliver organic vegetables &amp; fruits</h2>
-	              <p><a href="#" class="btn btn-primary">View Details</a></p>
-	            </div>
-
-	          </div>
-	        </div>
-	      </div>
-	    </div>
-    </section>
-
+   
 
 	<!-- Product -->
 		<c:choose>
@@ -147,14 +116,7 @@
 	
   <!-- ============================================================================================================================= -->	
     
-    <!-- 여백 -->
-	<div class="sec-banner bg0 p-t-80 p-b-50">
-		<div class="container">
-			<div class="row">
-			</div>
-		</div>
-	</div>
-    
+
    <!-- ============================================================================================================================= -->	
     
     
