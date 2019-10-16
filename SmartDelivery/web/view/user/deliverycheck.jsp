@@ -51,11 +51,7 @@
             <img src="/SmartDelivery/view/user/images/map2.JPG">
           	<!-- <div id="map" class="bg-white"></div> -->
           	
-          </div>
-          
-          
-          
-          
+          </div>          
           
         </div>
       </div>
