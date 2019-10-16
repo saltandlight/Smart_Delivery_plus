@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+    
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -30,15 +33,7 @@
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
-  <style>
-  .join_form_div{
-	margin: auto 0;
-	padding: 200px;
-   }
-
   
-  
-  </style>
   <body class="goto-here">
 		<div class="py-1 bg-primary">
     	<div class="container">
