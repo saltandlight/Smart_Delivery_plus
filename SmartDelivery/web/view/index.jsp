@@ -79,7 +79,7 @@
 	          <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
-              	<a class="dropdown-item" href="customershop.del">Shop</a>
+              	<a class="dropdown-item" href="productlist.del">Shop</a>
               	<a class="dropdown-item" href="customerwish.del">Wishlist</a>
                 <a class="dropdown-item" href="customerproduct.del">Single Product</a>
                 <a class="dropdown-item" href="customercart.del">Cart</a>
@@ -147,7 +147,7 @@
             <div class="ftco-footer-widget mb-4 ml-md-5">
               <h2 class="ftco-heading-2">Menu</h2>
               <ul class="list-unstyled">
-                <li><a href="customershop.del" class="py-2 d-block">Shop</a></li>
+                <li><a href="productlist.del" class="py-2 d-block">Shop</a></li>
                 <li><a href="about.jsp" class="py-2 d-block">About</a></li>
                 <li><a href="#" class="py-2 d-block">Journal</a></li>
                 <li><a href="login.jsp" class="py-2 d-block">Login</a></li>
