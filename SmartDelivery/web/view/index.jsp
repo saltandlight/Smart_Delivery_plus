@@ -83,7 +83,7 @@
               	<a class="dropdown-item" href="customerwish.del">Wishlist</a>
                 <a class="dropdown-item" href="customerproduct.del">Single Product</a>
                 <a class="dropdown-item" href="customercart.del">Cart</a>
-                <a class="dropdown-item" href="customercheck.del">Checkout</a>
+                <a class="dropdown-item" href="productorder.del">Order</a>
               </div>
             </li>
 	          <li class="nav-item"><a href="customerabout.del" class="nav-link">About</a></li>

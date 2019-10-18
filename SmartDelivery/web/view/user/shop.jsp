@@ -48,7 +48,7 @@
                       <a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
                         <span><i class="ion-ios-menu"></i></span>
                       </a>
-                      <a href="order.del?product_id=${p.product_id }" class="buy-now d-flex justify-content-center align-items-center mx-1">
+                      <a href="productorder.del?product_id=${p.product_id }" class="buy-now d-flex justify-content-center align-items-center mx-1">
                         <span><i class="ion-ios-cart"></i></span>
                       </a>
                       <a href="#" class="heart d-flex justify-content-center align-items-center ">
