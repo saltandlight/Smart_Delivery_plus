@@ -6,15 +6,15 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
-import com.frame.Biz;
-import com.frame.Dao;
+import com.frame.DependenciesBiz;
+import com.frame.DependenciesDao;
 import com.vo.Product;
 
 @Service("pbiz")
-public class ProductBiz implements Biz<String, Product> {
+public class ProductBiz implements DependenciesBiz<String, Product> {
 
 	@Resource(name="pdao")
-	Dao<String, Product> dao;
+	DependenciesDao<String, Product> dao;
 	
 	@Override
 	public void register(Product v) throws Exception {
@@ -35,7 +35,12 @@ public class ProductBiz implements Biz<String, Product> {
 	public Product get(String k) throws Exception {
 		return dao.select(k);
 	}
-
+	
+	@Override
+	public Product pidmaxselect() throws Exception{
+		return dao.pidmaxselect();
+	}
+	
 	@Override
 	public ArrayList<Product> get() throws Exception {
 		return dao.select();

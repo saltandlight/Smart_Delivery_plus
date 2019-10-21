@@ -5,14 +5,14 @@ import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.frame.Dao;
+import com.frame.DependenciesDao;
 import com.mapper.ProductMapper;
 import com.vo.Product;
 
 @Repository("pdao")
-public class ProductDao implements Dao<String, Product> {
+public class ProductDao implements DependenciesDao<String, Product> {
 
-	@Autowired
+	@Autowired(required=true)
 	ProductMapper pm;
 	
 	
@@ -35,10 +35,16 @@ public class ProductDao implements Dao<String, Product> {
 	public Product select(String k) throws Exception {
 		return pm.select(k);
 	}
-
+	
+	@Override
+	public Product pidmaxselect() throws Exception{
+		return pm.pidmaxselect();
+	}
+	
 	@Override
 	public ArrayList<Product> select() throws Exception {
 		return pm.selectall();
 	}
 
+	
 }
