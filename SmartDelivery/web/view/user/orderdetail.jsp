@@ -3,127 +3,105 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>  
 
+<style>
+.table1{
+	border-collapse:collapse;
+	width:100%;
+}
+
+th, td{
+ padding: 8px;
+ text-align:left;
+ border-bottom: 1px solid #ddd;
+}
+
+</style>
     <div class="hero-wrap hero-bread" style="background-image: url('/SmartDelivery/view/user/images/bg_1.jpg');">
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
-          	<p class="breadcrumbs"><span class="mr-2"><a href="customermain.del">Home</a></span> <span>Checkout</span></p>
-            <h1 class="mb-0 bread">Checkout</h1>
+          	<p class="breadcrumbs"><span class="mr-2"><a href="customermain.del">Home</a></span> <span>OrderDetail</span></p>
+            <h1 class="mb-0 bread">OrderDetail</h1>
           </div>
         </div>
       </div>
     </div>
 
-    <section class="ftco-section">
+   <section class="ftco-section">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-xl-7 ftco-animate">
-						<form action="#" class="billing-form">
-							<h3 class="mb-4 billing-heading">Billing Details</h3>
+				<h2 class="mb-4 billing-heading">주문 #201910171</h2>
 	          	<div class="row align-items-end">
-	          		<div class="col-md-6">
-	                <div class="form-group">
-	                	<label for="firstname">Firt Name</label>
-	                  <input type="text" class="form-control" placeholder="">
-	                </div>
-	              </div>
-	              <div class="col-md-6">
-	                <div class="form-group">
-	                	<label for="lastname">Last Name</label>
-	                  <input type="text" class="form-control" placeholder="">
-	                </div>
-                </div>
+	          		
                 <div class="w-100"></div>
 		            <div class="col-md-12">
-		            	<div class="form-group">
-		            		<label for="country">State / Country</label>
-		            		<div class="select-wrap">
-		                  <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-		                  <select name="" id="" class="form-control">
-		                  	<option value="">France</option>
-		                    <option value="">Italy</option>
-		                    <option value="">Philippines</option>
-		                    <option value="">South Korea</option>
-		                    <option value="">Hongkong</option>
-		                    <option value="">Japan</option>
-		                  </select>
-		                </div>
+		              <p>주문 #201910171가 2019년 10월 17일에 이루어졌으며 현재 입금확인 중입니다.</p>
+		            	
 		            	</div>
 		            </div>
+		            <br>
 		            <div class="w-100"></div>
-		            <div class="col-md-6">
+		            <div class="col-md-12">
 		            	<div class="form-group">
-	                	<label for="streetaddress">Street Address</label>
-	                  <input type="text" class="form-control" placeholder="House number and street name">
+	                	<h4>주문 업데이트</h4>
+	                	<br>
+	                    <p>ID01님(10월 17일) $100 입금</p>
 	                </div>
 		            </div>
-		            <div class="col-md-6">
-		            	<div class="form-group">
-	                  <input type="text" class="form-control" placeholder="Appartment, suite, unit etc: (optional)">
-	                </div>
-		            </div>
+		            
 		            <div class="w-100"></div>
-		            <div class="col-md-6">
-		            	<div class="form-group">
-	                	<label for="towncity">Town / City</label>
-	                  <input type="text" class="form-control" placeholder="">
-	                </div>
-		            </div>
-		            <div class="col-md-6">
-		            	<div class="form-group">
-		            		<label for="postcodezip">Postcode / ZIP *</label>
-	                  <input type="text" class="form-control" placeholder="">
-	                </div>
-		            </div>
-		            <div class="w-100"></div>
-		            <div class="col-md-6">
+		            <br>
+		            <div class="col-md-12">
 	                <div class="form-group">
-	                	<label for="phone">Phone</label>
-	                  <input type="text" class="form-control" placeholder="">
+	                	<h4>주문 상세</h4>
+	                	<br>
+	                 	 <table class="table1">
+	                 	   <tr><td>상품</td><td>통계</td></tr>
+	                       <tr><td>BELL PEPPER</td><td>$80</td></tr>
+	                 	   <tr><td>배송</td><td>$20</td></tr>
+	                       <tr><td>합계</td><td>$100</td></tr>	  
+	                       <tr><td>지불 방법</td><td>카드</td></tr>	  
+	                       <tr><td>총계</td><td>$100</td></tr>	                  
+	                    </table>
 	                </div>
 	              </div>
-	              <div class="col-md-6">
-	                <div class="form-group">
-	                	<label for="emailaddress">Email Address</label>
-	                  <input type="text" class="form-control" placeholder="">
-	                </div>
-                </div>
-                <div class="w-100"></div>
+	              
+                <!-- <div class="w-100"></div>
                 <div class="col-md-12">
                 	<div class="form-group mt-4">
+                	  <label for="country">지불 방식</label>
 										<div class="radio">
-										  <label class="mr-3"><input type="radio" name="optradio"> Create an Account? </label>
-										  <label><input type="radio" name="optradio"> Ship to different address</label>
+										  <label class="mr-3"><input type="radio" name="pay"> 카드 </label>
+										  <label><input type="radio" name="pay"> 무통장 입금</label>
 										</div>
-									</div>
+									</div>-->
+									
                 </div>
-	            </div>
-	          </form><!-- END -->
+                
+	            </div> 
 					</div>
 					<div class="col-xl-5">
-	          <div class="row mt-5 pt-3">
+	       <!--    <div class="row mt-5 pt-3">
 	          	<div class="col-md-12 d-flex mb-5">
 	          		<div class="cart-detail cart-total p-3 p-md-4">
-	          			<h3 class="billing-heading mb-4">Cart Total</h3>
+	          			<h3 class="billing-heading mb-4">카트 총 가격</h3>
 	          			<p class="d-flex">
-		    						<span>Subtotal</span>
+		    						<span>가격</span>
 		    						<span>$20.60</span>
 		    					</p>
 		    					<p class="d-flex">
-		    						<span>Delivery</span>
+		    						<span>배송비</span>
 		    						<span>$0.00</span>
 		    					</p>
-		    					<p class="d-flex">
-		    						<span>Discount</span>
-		    						<span>$3.00</span>
-		    					</p>
+		    					
 		    					<hr>
 		    					<p class="d-flex total-price">
-		    						<span>Total</span>
-		    						<span>$17.60</span>
+		    						<span>총 가격</span>
+		    						<span>$20.60</span>
 		    					</p>
 								</div>
-	          	</div>
+	          	</div> 
 	          	<div class="col-md-12">
 	          		<div class="cart-detail p-3 p-md-4">
 	          			<h3 class="billing-heading mb-4">Payment Method</h3>
@@ -159,10 +137,10 @@
 								</div>
 	          	</div>
 	          </div>
-          </div> <!-- .col-md-8 -->
+          </div>-->
         </div>
       </div>
-    </section> <!-- .section -->
+    </section> 
 
 		<section class="ftco-section ftco-no-pt ftco-no-pb py-5 bg-light">
       <div class="container py-4">
@@ -219,4 +197,6 @@
 		    });
 		    
 		});
-	</script>
+	</script> 
+	
+	

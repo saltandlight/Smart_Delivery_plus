@@ -85,11 +85,6 @@ public class MainController {
 		return mv;
 	}
 	
-	@RequestMapping("/productadd.del")
-	public ModelAndView productadd(ModelAndView mv) {
-		mv.addObject("center","user/productadd");
-		mv.setViewName("index");
-		return mv;
-	}
+	
 	
 }
