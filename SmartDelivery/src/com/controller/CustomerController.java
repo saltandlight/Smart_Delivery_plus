@@ -53,13 +53,7 @@ public class CustomerController {
 			e.printStackTrace();
 		}
 		
-		try {
-			mv.addObject("center","user/join");
-			mv.setViewName("index");
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		mv.setViewName("user/join");
 		return mv;
 	}
 	
@@ -84,8 +78,7 @@ public class CustomerController {
 			mv.addObject("join");
 			e.printStackTrace();
 		}
-		mv.addObject("center","user/login");
-		mv.setViewName("index");
+		mv.setViewName("user/login");
 		return mv;
 	}
 	
@@ -102,11 +95,9 @@ public class CustomerController {
 			System.out.println(customer.toString());
 			if(pwd.equals(customer.getCustomer_pwd())) {
 				session.setAttribute("loginuser", customer);
-				mv.addObject("center","user/shop");
-				mv.setViewName("index");
+				mv.setViewName("user/shop");
 			}else {
-				mv.addObject("center", "user/login");
-				mv.setViewName("index");
+				mv.setViewName("user/login");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

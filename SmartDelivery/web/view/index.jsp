@@ -5,9 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-      <title>
-    Smart Delivery+
-  </title>
+    <title>SmartDelieveryPlus_main</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -34,7 +32,7 @@
     
     <link rel="stylesheet" href="/SmartDelivery/view/user/css/icomoon.css">
      
-    <link rel="stylesheet" href="/SmartDelivery/view/user/css/style.css">  
+   <!-- <link rel="stylesheet" href="/SmartDelivery/view/user/css/style.css">   -->
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     
   <style>
@@ -79,11 +77,11 @@
 	          <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
-              	<a class="dropdown-item" href="productlist.del">Shop</a>
+              	<a class="dropdown-item" href="customershop.del">Shop</a>
               	<a class="dropdown-item" href="customerwish.del">Wishlist</a>
                 <a class="dropdown-item" href="customerproduct.del">Single Product</a>
                 <a class="dropdown-item" href="customercart.del">Cart</a>
-                <a class="dropdown-item" href="productorder.del">Order</a>
+                <a class="dropdown-item" href="customercheck.del">Checkout</a>
               </div>
             </li>
 	          <li class="nav-item"><a href="customerabout.del" class="nav-link">About</a></li>
@@ -101,7 +99,40 @@
     <!-- END nav -->
 
 	
-   
+    <section id="home-section" class="hero">
+		  <div class="home-slider owl-carousel">
+	      <div class="slider-item" style="background-image: url(/SmartDelivery/view/user/images/bg_1.jpg);">
+	      	<div class="overlay"></div>
+	        <div class="container">
+	          <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
+
+	            <div class="col-md-12 ftco-animate text-center">
+	              <h1 class="mb-2">We serve Fresh Vegestables &amp; Fruits</h1>
+	              <h2 class="subheading mb-4">We deliver organic vegetables &amp; fruits</h2>
+	              <p><a href="#" class="btn btn-primary">View Details</a></p>
+	            </div>
+
+	          </div>
+	        </div>
+	      </div>
+
+	      <div class="slider-item" style="background-image: url(/SmartDelivery/view/user/images/bg_2.jpg);">
+	      	<div class="overlay"></div>
+	        <div class="container">
+	          <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
+
+	            <div class="col-sm-12 ftco-animate text-center">
+	              <h1 class="mb-2">100% Fresh &amp; Organic Foods</h1>
+	              <h2 class="subheading mb-4">We deliver organic vegetables &amp; fruits</h2>
+	              <p><a href="#" class="btn btn-primary">View Details</a></p>
+	            </div>
+
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+    </section>
+
 
 	<!-- Product -->
 		<c:choose>
@@ -116,7 +147,14 @@
 	
   <!-- ============================================================================================================================= -->	
     
-
+    <!-- 여백 -->
+	<div class="sec-banner bg0 p-t-80 p-b-50">
+		<div class="container">
+			<div class="row">
+			</div>
+		</div>
+	</div>
+    
    <!-- ============================================================================================================================= -->	
     
     
@@ -147,7 +185,7 @@
             <div class="ftco-footer-widget mb-4 ml-md-5">
               <h2 class="ftco-heading-2">Menu</h2>
               <ul class="list-unstyled">
-                <li><a href="productlist.del" class="py-2 d-block">Shop</a></li>
+                <li><a href="customershop.del" class="py-2 d-block">Shop</a></li>
                 <li><a href="about.jsp" class="py-2 d-block">About</a></li>
                 <li><a href="#" class="py-2 d-block">Journal</a></li>
                 <li><a href="login.jsp" class="py-2 d-block">Login</a></li>
