@@ -27,7 +27,7 @@ public class ProductController {
 	@RequestMapping("/productadd.del")
 	public ModelAndView productadd(ModelAndView mv) {
 		mv.addObject("center","user/productadd");
-		mv.setViewName("index");
+		mv.setViewName("home");
 		return mv;
 	}
 	
@@ -71,7 +71,7 @@ public class ProductController {
 	
 		
 		mv.addObject("center","user/productadd");		
-		mv.setViewName("index");
+		mv.setViewName("home");
 		return mv;
 	}
 
@@ -87,7 +87,7 @@ public class ProductController {
 		
 		mv.addObject("plist", list);
 		mv.addObject("center","user/shop");
-		mv.setViewName("index");
+		mv.setViewName("home");
 		return mv;
 	}
 }

@@ -9,14 +9,14 @@ public class OrderController {
 	@RequestMapping("/productorder.del")
 	public ModelAndView productorder(ModelAndView mv) {
 		mv.addObject("center", "user/order");
-		mv.setViewName("index");
+		mv.setViewName("home");
 		return mv;
 	}
 	
 	@RequestMapping("/orderdetail.del")
 	public ModelAndView orderdetail(ModelAndView mv) {
 		mv.addObject("center", "user/orderdetail");
-		mv.setViewName("index");
+		mv.setViewName("home");
 		return mv;
 	}
 }
