@@ -78,17 +78,17 @@
 	          			<h3 class="billing-heading mb-4">카트 총 가격</h3>
 	          			<p class="d-flex">
 		    						<span>가격</span>
-		    						<span>$80</span>
+		    						<span class="price">$${p.product_price }</span>
 		    					</p>
 		    					<p class="d-flex">
 		    						<span>배송비</span>
-		    						<span>$20</span>
+		    						<span class="del_price">$20</span>
 		    					</p>
 		    					
 		    					<hr>
 		    					<p class="d-flex total-price">
 		    						<span>총 가격</span>
-		    						<span>$100</span>
+		    						<span class="total_price"></span>
 		    					</p>
 								</div>
 	          	</div>
@@ -153,8 +153,58 @@
 
 
   <script>
-		$(document).ready(function(){
+  function getData(){
+		$.ajax({
+			url:'https://cors-anywhere.herokuapp.com/http://www.kma.go.kr/wid/queryDFSRSS.jsp?zone=',
+			/*크로스 도메인 문제 해결을 위해 https://cors-anywhere.herokuapp.com/ 주소 붙여줌  */
+			success: function(data){
+				parsing(data);
+			}
+		})
+	}
 
+	function parsing(data){
+		//02,05,08,11,14,17,20,23 (1일 8회 업데이트)
+		var d = new Date();
+		var h = d.getHours();
+		/*d.getHours(); //현재 시간*/
+		var temp = "";
+		var pop = "";
+		var ws = "";
+		var weather = $(data).find('data');
+		var seq = $(weather).attr('seq');
+		weather.each(function(index, weather){
+			if(seq == "0"){
+				var hour = $(this).find('hour').text();
+				hour = "("+((Number(hour))-3) + "시 ~ " + hour +"시)";
+				var temp = $(this).find('temp').text();
+				temp += "°C";
+				var pop = $(this).find('pop').text();
+				pop += "%";
+				var ws = $(this).find('ws').text();
+				ws += "m/s";
+				alert(temp+' '+'강수확률:'+pop+' '+ws+'\n');
+				
+				return false;
+			}
+		});
+	}
+
+  
+  
+  
+		$(document).ready(function(){
+			getData();
+			var a = $('.price').text();
+			var price=a.replace("$","");
+			var b = $('.del_price').text();
+			var del_price=b.replace("$","");
+			var result;
+			result = eval("result="+price +"+"+ del_price+";");
+			$('.total_price').html("$"+result);
+			
+			
+			
 		var quantitiy=0;
 		   $('.quantity-right-plus').click(function(e){
 		        

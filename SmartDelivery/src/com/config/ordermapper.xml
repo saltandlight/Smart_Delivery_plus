@@ -6,7 +6,7 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 
 	<insert id="insert" parameterType="order">
 		INSERT INTO ORDER_TB VALUES (#{order_id},#{customer_id},#{order_price},SYSDATE,#{order_addr},#{order_phone},
-		#{order_pay},#{order_wea}, #{cx}, #{cy}, #{current_time}, #{order_status}, #{product_id})	
+		#{order_pay},'맑음', #{cx}, #{cy}, #{current_time}, #{order_status}, #{product_id})	
 	</insert>
 	
 	<!-- <update id="update" parameterType="order">
