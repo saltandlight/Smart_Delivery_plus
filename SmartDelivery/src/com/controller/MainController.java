@@ -10,49 +10,49 @@ public class MainController {
 	@RequestMapping("/customermain.del")
 	public ModelAndView main(ModelAndView mv){
 		mv.addObject("center","center");
-		mv.setViewName("index");
+		mv.setViewName("home");
 		return mv;
 	}
 	
 	@RequestMapping("/customerjoin.del")
 	public ModelAndView customerjoin(ModelAndView mv) {
-		mv.addObject("center","user/join");
-		mv.setViewName("index");
+		mv.addObject("center","user/signup");
+		mv.setViewName("home");
 		return mv;
 	}
 	
 	@RequestMapping("/customerlogin.del")
 	public ModelAndView customerlogin(ModelAndView mv) {
-		mv.addObject("center","user/login");
-		mv.setViewName("index");
+		mv.addObject("center","user/signin");
+		mv.setViewName("home");
 		return mv;
 	}
 	
 	@RequestMapping("/customershop.del")
 	public ModelAndView shop(ModelAndView mv) {
 		mv.addObject("center","user/shop");
-		mv.setViewName("index");
+		mv.setViewName("home");
 		return mv;
 	}
 	
 	@RequestMapping("/customerwish.del")
 	public ModelAndView wishlist(ModelAndView mv) {
 		mv.addObject("center","user/wishlist");
-		mv.setViewName("index");
+		mv.setViewName("home");
 		return mv;
 	}
 	
 	@RequestMapping("/customerproduct.del")
 	public ModelAndView product_single(ModelAndView mv) {
 		mv.addObject("center","user/product-single");
-		mv.setViewName("index");
+		mv.setViewName("home");
 		return mv;
 	}
 	
 	@RequestMapping("/customercart.del")
 	public ModelAndView cart(ModelAndView mv) {
 		mv.addObject("center","user/cart");
-		mv.setViewName("index");
+		mv.setViewName("home");
 		return mv;
 	}
 	
@@ -60,14 +60,14 @@ public class MainController {
 	@RequestMapping("/customercheck.del")
 	public ModelAndView checkout(ModelAndView mv) {
 		mv.addObject("center","user/checkout");
-		mv.setViewName("index");
+		mv.setViewName("home");
 		return mv;
 	}
 	
 	@RequestMapping("/customerabout.del")
 	public ModelAndView about(ModelAndView mv) {
 		mv.addObject("center","user/about");
-		mv.setViewName("index");
+		mv.setViewName("home");
 		return mv;
 	}
 	

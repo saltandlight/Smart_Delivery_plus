@@ -38,7 +38,7 @@ public class OrderController {
 		
 		mv.addObject("p", product);
 		mv.addObject("center", "user/order");
-		mv.setViewName("index");
+		mv.setViewName("home");
 		return mv;
 	}
 	
@@ -51,7 +51,7 @@ public class OrderController {
 	@RequestMapping("/orderdetail.del")
 	public ModelAndView orderdetail(ModelAndView mv) {
 		mv.addObject("center", "user/orderdetail");
-		mv.setViewName("index");
+		mv.setViewName("home");
 		return mv;
 	}
 	

@@ -1,72 +1,81 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
- 
-		
-    <div class="hero-wrap hero-bread" style="background-image: url('/SmartDelivery/view/user/images/bg_1.jpg');">
-      <div class="container">
-        <div class="row no-gutters slider-text align-items-center justify-content-center">
-          <div class="col-md-9 ftco-animate text-center">
-          	<p class="breadcrumbs"><span class="mr-2"><a href="/SmartDelivery/index.jsp">Home</a></span> <span>Join us</span></p>
-            <h1 class="mb-0 bread">Join</h1>
-          </div>
-        </div>
-      </div>
-    </div>
-   </div>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
-        <div class="join_form_div">
-          <div>
-            <form action="customerjoinimpl.del" method="POST" onclick="return joinCheck(this)" class="bg-white p-5 contact-form">
-             <div class="form-group"> 
-                <input type="text"  size="7" id="id" name="CUSTOMER_ID" class="form-control" placeholder="ID">
-            
-                <input type="button" class="btn btn-primary py-3 px-20" name="idceck" value="중복확인" />
-       
-               </div>
-              <div class="form-group">
-                <input type="password"  size="10"  name="CUSTOMER_PWD" class="form-control" placeholder="Password">
-              </div>
-             <div class="form-group"> 
-                <input type="password"  size="10" name="CUSTOMER_PWD2" onchange="isSame()" class="form-control" placeholder="Password Check">
-                <span class="same"></span>
-             </div> 
-             <div class="form-group"> 
-                <input type="text" size="10"  id="name" name="CUSTOMER_NM" class="form-control" placeholder="Name">
-            </div> 
 
-             <div class="form-group">	
-                <input type="text"  size="10"  id="gender"  name="CUSTOMER_GD" class="form-control" placeholder="Gender">
-             </div> 
+<div class="hero-wrap hero-bread"
+	style="background-image: url('/SmartDelivery/view/user/images/bg_1.jpg');">
+	<div class="container">
+		<div
+			class="row no-gutters slider-text align-items-center justify-content-center">
+			<div class="col-md-9 ftco-animate text-center">
+				<p class="breadcrumbs">
+					<span class="mr-2"></span>
+				</p>
+				<h1 class="mb-0 bread">Sign Up</h1>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
 
-              <div class="form-group"> 
-                <input type="text"  size="10" id="age" name="CUSTOMER_AGE" class="form-control" placeholder="Age">
-              </div> 
-              
-            <div class="form-group">   
-                <input type="text"  size="10" id="phonenumber" name="CUSTOMER_PHONE" class="form-control" placeholder="Phone Number">
-             </div> 
-             
-             <div class="form-group">
-                <input type="text" size="10"  id="useraddr" name="CUSTOMER_ADDR" class="form-control" placeholder="Address">
-             </div>
-             <div class="form-group">
-                <input type="submit" value="JOIN" name="registerok" class="btn btn-primary py-3 px-5" >
-              </div> 
-            </form> 
-             
-             
-          </div>
-          </div>
-     
-        </div>
-      </div>
-    </section>
+<div class="join_form_div">
+	<div>
+		<form action="customerjoinimpl.del" method="POST"
+			onclick="return joinCheck(this)" class="bg-white p-5 contact-form">
+			<div class="form-group">
+				<input type="text" size="7" id="id" name="CUSTOMER_ID"
+					class="form-control" placeholder="ID"> <input type="button"
+					class="btn btn-primary py-3 px-20" name="idceck" value="중복확인" />
 
-    
-    
-  
+			</div>
+			<div class="form-group">
+				<input type="password" size="10" name="CUSTOMER_PWD"
+					class="form-control" placeholder="Password">
+			</div>
+			<div class="form-group">
+				<input type="password" size="10" name="CUSTOMER_PWD2"
+					onchange="isSame()" class="form-control"
+					placeholder="Password Check"> <span class="same"></span>
+			</div>
+			<div class="form-group">
+				<input type="text" size="10" id="name" name="CUSTOMER_NM"
+					class="form-control" placeholder="Name">
+			</div>
+
+			<div class="form-group">
+				<input type="text" size="10" id="gender" name="CUSTOMER_GD"
+					class="form-control" placeholder="Gender">
+			</div>
+
+			<div class="form-group">
+				<input type="text" size="10" id="age" name="CUSTOMER_AGE"
+					class="form-control" placeholder="Age">
+			</div>
+
+			<div class="form-group">
+				<input type="text" size="10" id="phonenumber" name="CUSTOMER_PHONE"
+					class="form-control" placeholder="Phone Number">
+			</div>
+
+			<div class="form-group">
+				<input type="text" size="10" id="useraddr" name="CUSTOMER_ADDR"
+					class="form-control" placeholder="Address">
+			</div>
+			<div class="form-group">
+				<input type="submit" value="JOIN" name="registerok"
+					class="btn btn-primary py-3 px-5">
+			</div>
+		</form>
+
+
+	</div>
+</div>
+
+
+
+
 
 <script>
 	function joinCheck(obj) {		

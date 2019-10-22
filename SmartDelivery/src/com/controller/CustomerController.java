@@ -54,8 +54,8 @@ public class CustomerController {
 		}
 		
 		try {
-			mv.addObject("center","user/join");
-			mv.setViewName("index");
+			mv.addObject("center","user/signup");
+			mv.setViewName("home");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -84,8 +84,8 @@ public class CustomerController {
 			mv.addObject("join");
 			e.printStackTrace();
 		}
-		mv.addObject("center","user/login");
-		mv.setViewName("index");
+		mv.addObject("center","user/signin");
+		mv.setViewName("home");
 		return mv;
 	}
 	
@@ -105,8 +105,8 @@ public class CustomerController {
 				mv.addObject("center","user/shop");
 				mv.setViewName("index");
 			}else {
-				mv.addObject("center", "user/login");
-				mv.setViewName("index");
+				mv.addObject("center", "user/signin");
+				mv.setViewName("home");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
