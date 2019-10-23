@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 import org.springframework.transaction.annotation.Transactional;
 
+import com.vo.Order;
+
 public interface OrDependenciesBiz<K,V> {
 	@Transactional
 	public void register(V v) throws Exception;
@@ -13,5 +15,7 @@ public interface OrDependenciesBiz<K,V> {
 	public void remove(K k) throws Exception;
 	public ArrayList<V> get(K k) throws Exception;
 	public ArrayList<V> get() throws Exception;
-	
+	//Specialized
+	public V oidmaxselect() throws Exception;
+	public V select_oid(String obj) throws Exception;
 }

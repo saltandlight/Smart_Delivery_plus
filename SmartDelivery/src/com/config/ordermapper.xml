@@ -7,7 +7,7 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	<insert id="insert" parameterType="order">
 		INSERT INTO ORDER_TB VALUES (#{order_id},#{customer_id},#{order_price},
 		SYSDATE,#{order_addr},#{order_phone},#{order_pay},#{order_wea},
-		,#{cx},#{cy},#{current_time}, #{order_status}, #{product_id})	
+		#{cx},#{cy},#{current_time}, #{order_status}, #{product_id})	
 	</insert>
 	
 	<!-- <update id="update" parameterType="cart">
@@ -22,6 +22,19 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	resultType="order">	
 		SELECT * FROM ORDER_TB WHERE customer_id=#{customer_id}	
 	</select>
+	
+	<select id="select_oid" parameterType="String" 
+	resultType="order">	
+		SELECT * FROM ORDER_TB WHERE order_id=#{order_id }	
+	</select>
+	
+	
+	<select id="oidmaxselect" resultType="order">
+		SELECT * FROM ORDER_TB
+		WHERE SUBSTR(ORDER_ID,4) = (SELECT MAX(TO_NUMBER(SUBSTR(ORDER_ID,4))) FROM ORDER_TB)
+	</select>
+	
+	
 	
 	<select id="selectall" resultType="order">
 		SELECT * FROM ORDER_TB

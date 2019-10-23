@@ -41,6 +41,17 @@ public class OrderBiz implements OrDependenciesBiz<String, Order> {
 	public ArrayList<Order> get() throws Exception {
 		return dao.select();
 	}
+
+	@Override
+	public Order oidmaxselect() throws Exception {
+		return dao.oidmaxselect();
+	}
+
+	@Override
+	public Order select_oid(String obj) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.select_oid(obj);
+	}
 	
 	
 }

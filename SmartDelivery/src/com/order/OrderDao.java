@@ -42,5 +42,18 @@ public class OrderDao implements OrDependenciesDao<String, Order> {
 		return om.selectall();
 	}
 
+	@Override
+	public Order oidmaxselect() throws Exception {
+		// TODO Auto-generated method stub
+		return om.oidmaxselect();
+	}
+
+	@Override
+	public Order select_oid(String obj) throws Exception {
+		// TODO Auto-generated method stub
+		return om.select_oid(obj);
+	}
+
+
 	
 }

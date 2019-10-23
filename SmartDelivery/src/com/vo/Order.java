@@ -30,14 +30,31 @@ public class Order {
 	String current_time;
 	int order_status;
 	String product_id;
+	int sub_id2;
 	
-	public Order(String order_id, String customer_id, int order_price, String order_date, String order_addr,
+	
+	public Order() {
+	}
+
+	
+	public Order(int order_price, String order_addr, String order_phone, String order_pay, String order_wea,
+			String cx, String cy) {
+		this.order_price = order_price;
+		this.order_addr = order_addr;
+		this.order_phone = order_phone;
+		this.order_pay = order_pay;
+		this.order_wea=order_wea;
+		this.cx=cx;
+		this.cy=cy;
+	}
+
+
+	public Order(String order_id, String customer_id, int order_price,  String order_addr,
 			String order_phone, String order_pay, String order_wea, String cx, String cy, String current_time,
 			int order_status, String product_id) {
 		this.order_id = order_id;
 		this.customer_id = customer_id;
 		this.order_price = order_price;
-		this.order_date = order_date;
 		this.order_addr = order_addr;
 		this.order_phone = order_phone;
 		this.order_pay = order_pay;
@@ -127,6 +144,16 @@ public class Order {
 		this.product_id = product_id;
 	}
 	
+	public int getSub_id2() {
+		return sub_id2;
+	}
+
+
+	public void setSub_id2(int sub_id22) {
+		this.sub_id2 = sub_id22;
+	}
+
+
 	@Override
 	public String toString() {
 		return "Order [order_id=" + order_id + ", customer_id=" + customer_id + ", order_price=" + order_price
