@@ -190,7 +190,6 @@
 	    });
 	  } else {
 		  ;
-/* 	    alert('GPS를 지원하지 않습니다'); */
 	  }
 	}
 
@@ -207,8 +206,7 @@
 	function parsing(data){
 		//02,05,08,11,14,17,20,23 (1일 8회 업데이트)
 		var d = new Date();
-		var h = d.getHours();
-		/*d.getHours(); //현재 시간*/
+		var h = d.getHours()
 		var temp = "";
 		var pop = "";
 		var ws = "";

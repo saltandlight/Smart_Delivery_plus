@@ -12,9 +12,11 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.frame.DependenciesBiz;
 import com.frame.OrDependenciesBiz;
+import com.frame.StDependenciesBiz;
 import com.vo.Customer;
 import com.vo.Order;
 import com.vo.Product;
+import com.vo.Status;
 
 @Controller
 public class OrderController {
@@ -25,20 +27,31 @@ public class OrderController {
 	@Resource(name="obiz")
 	OrDependenciesBiz<String, Order> obiz;
 	
+	@Resource(name="sbiz")
+	StDependenciesBiz<String, Status> sbiz;
+	
 	@RequestMapping("/productorder.del")
-	public ModelAndView productorder(ModelAndView mv, String product_id) {
+	public ModelAndView productorder(ModelAndView mv, String product_id, HttpSession session) {
 		
-		try {
-			Product product=pbiz.get(product_id);
-			System.out.println(product.toString());
-			mv.addObject("p",product);
-		} catch (Exception e) {
-			e.printStackTrace();
+		Customer customer=(Customer)session.getAttribute("loginuser");
+		
+		if(customer!=null) {
+			try {
+				Product product=pbiz.get(product_id);
+				System.out.println(product.toString());
+				mv.addObject("p",product);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+			
+			mv.addObject("center", "user/order");
+			mv.setViewName("index");
 		}
-		
-		
-		mv.addObject("center", "user/order");
-		mv.setViewName("index");
+		else {
+			mv.addObject("center", "user/login");
+			mv.setViewName("index");
+		}
 		return mv;
 	}
 	
@@ -105,8 +118,12 @@ public class OrderController {
 		try {
 			Order order=obiz.select_rec(customer.getCustomer_id());
 			Product product=pbiz.get(order.getProduct_id());
+			Status status=sbiz.selectpos(order.getOrder_id());
 			System.out.println(order.toString());
 			System.out.println(product.toString());
+			System.out.println(status.toString());
+			
+			mv.addObject("s",status);
 			mv.addObject("o", order);
 			mv.addObject("p",product);
 		} catch (Exception e) {
