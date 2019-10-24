@@ -4,6 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.frame.DependenciesBiz;
 import com.frame.OrDependenciesBiz;
+import com.vo.Customer;
 import com.vo.Order;
 import com.vo.Product;
 
@@ -41,7 +43,7 @@ public class OrderController {
 	}
 	
 	@RequestMapping("/orderdetail.del")
-	public ModelAndView orderdetail(ModelAndView mv,Order order,String product_id) {
+	public ModelAndView orderdetail(ModelAndView mv,Order order,String product_id,HttpSession session) {
 		System.out.println(product_id);
 
 		System.out.println(order.toString());
@@ -65,7 +67,9 @@ public class OrderController {
 				order.setSub_id2(1);
 				order.setOrder_id(today2+1);
 			}
-			order.setCustomer_id("ID01");
+			
+			Customer customer=(Customer)session.getAttribute("loginuser");
+			order.setCustomer_id(customer.getCustomer_id());
 			order.setCurrent_time(today);
 			System.out.println(order.toString());
 

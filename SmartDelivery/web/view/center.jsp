@@ -100,7 +100,7 @@
 									<div class="text text-center">
 										<h2>Vegetables</h2>
 										<p>Protect the health of every home</p>
-										<p><a href="customershop.del" class="btn btn-primary">Shop now</a></p>
+										<p><a href="productlist.del" class="btn btn-primary">Shop now</a></p>
 									</div>
 								</div>
 							</div>

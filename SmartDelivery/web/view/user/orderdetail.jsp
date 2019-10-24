@@ -46,7 +46,7 @@ th, td{
 		            	<div class="form-group">
 	                	<h4>주문 업데이트</h4>
 	                	<br>
-	                    <p>ID01님 $${o.order_price } 입금</p>
+	                    <p>${o.customer_id }님 $${o.order_price } 입금</p>
 	                </div>
 		            </div>
 		            

@@ -75,26 +75,39 @@
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item active"><a href="customermain.del" class="nav-link">Home</a></li>
-	          <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
-              <div class="dropdown-menu" aria-labelledby="dropdown04">
-              	<a class="dropdown-item" href="productlist.del">Shop</a>
-              	<a class="dropdown-item" href="customerwish.del">Wishlist</a>
-                <a class="dropdown-item" href="customerproduct.del">Single Product</a>
-                <a class="dropdown-item" href="customercart.del">Cart</a>
-                <a class="dropdown-item" href="productorder.del">Order</a>
-              </div>
-            </li>
-	          <li class="nav-item"><a href="customerabout.del" class="nav-link">About</a></li>
-	          <li class="nav-item"><a href="customerblog.del" class="nav-link">Blog</a></li>
-	          <li class="nav-item"><a href="customerjoin.del" class="nav-link">Join</a></li>
-	          <li class="nav-item"><a href="customerlogin.del" class="nav-link">Login</a></li>
-	         <!-- 로그인한 후에만 들어갈 수 있게 해야 함  -->
-	          <li class="nav-item"><a href="customerdelcheck.del" class="nav-link">DeliveryCheck</a></li>
-	          <li class="nav-item cta cta-colored"><a href="cart.jsp" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
-
-	        </ul>
+	           <li class="nav-item active"><a href="customermain.del" class="nav-link">Home</a></li>
+	            <li class="nav-item active"><a href="productlist.del" class="nav-link">Shop</a></li>
+	    
+	       				   <!--  <li class="nav-item dropdown">
+              				<a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
+              				<div class="dropdown-menu" aria-labelledby="dropdown04"> -->
+              			
+              	      <!--       <a class="dropdown-item" href="customerproduct.del">Single Product</a>
+              	            <a class="dropdown-item" href="customercart.del">Cart</a>
+              	          
+              	            </div> -->
+                 	     <!--    </li> -->
+                 	         
+	            
+	          <c:choose>
+				 <c:when test="${loginuser != null }">
+			
+	                 <li class="nav-item"><a href="logout.del" class="nav-link">Logout</a></li>
+	                 <!-- 로그인한 후에만 들어갈 수 있게 해야 함  -->
+	             <!--     <li class="nav-item"><a href="productorder.del" class="nav-link" >Order</a></li>	  -->	
+	                 <li class="nav-item"><a href="customerabout.del" class="nav-link">About</a></li>
+	         		 <li class="nav-item"><a href="customerblog.del" class="nav-link">Blog</a></li>
+	       	         <li class="nav-item"><a href="customerdelcheck.del" class="nav-link">DeliveryCheck</a></li>
+					  
+				 </c:when>
+				 <c:otherwise>
+					<li class="nav-item"><a href="customerjoin.del" class="nav-link">Join</a></li>
+	              	<li class="nav-item"><a href="customerlogin.del" class="nav-link">Login</a></li>
+	          		<li class="nav-item"><a href="customerabout.del" class="nav-link">About</a></li>
+	         		<li class="nav-item"><a href="customerblog.del" class="nav-link">Blog</a></li>
+				 </c:otherwise>
+			  </c:choose>
+	        </ul> 
 	      </div>
 	    </div>
 	  </nav>
