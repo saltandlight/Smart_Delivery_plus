@@ -1,14 +1,39 @@
 package com.controller;
 
+import java.util.ArrayList;
+
+import javax.annotation.Resource;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.frame.DependenciesBiz;
+import com.vo.Product;
+
 @Controller
 public class MainController {
 
+	@Resource(name="pbiz")
+	DependenciesBiz<String, Product> pbiz;
+	
 	@RequestMapping("/customermain.del")
 	public ModelAndView main(ModelAndView mv){
+		ArrayList<Product> list;
+		
+		try {
+			list=pbiz.selectbest();
+			
+//			System.out.println(list.size());
+//			for(int i=0;i<list.size();i++) {
+//				System.out.println(list.toString());
+//			}
+			mv.addObject("plist",list);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		mv.addObject("center","center");
 		mv.setViewName("index");
 		return mv;
@@ -45,13 +70,6 @@ public class MainController {
 	@RequestMapping("/customerproduct.del")
 	public ModelAndView product_single(ModelAndView mv) {
 		mv.addObject("center","user/product-single");
-		mv.setViewName("index");
-		return mv;
-	}
-	
-	@RequestMapping("/customercart.del")
-	public ModelAndView cart(ModelAndView mv) {
-		mv.addObject("center","user/cart");
 		mv.setViewName("index");
 		return mv;
 	}

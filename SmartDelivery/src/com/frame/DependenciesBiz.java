@@ -16,4 +16,6 @@ public interface DependenciesBiz<K,V> {
 	
 	//Specialized
 	public V pidmaxselect() throws Exception;
+	public ArrayList<V> selectbest() throws Exception;
+	
 }
