@@ -119,11 +119,14 @@ public class OrderController {
 			Order order=obiz.select_rec(customer.getCustomer_id());
 			Product product=pbiz.get(order.getProduct_id());
 			Status status=sbiz.selectpos(order.getOrder_id());
+			
 			System.out.println(order.toString());
 			System.out.println(product.toString());
-			System.out.println(status.toString());
+			if(status!=null) {
+				System.out.println(status.toString());
+				mv.addObject("s",status);
+			}
 			
-			mv.addObject("s",status);
 			mv.addObject("o", order);
 			mv.addObject("p",product);
 		} catch (Exception e) {
