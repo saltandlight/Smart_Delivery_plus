@@ -14,11 +14,11 @@
         </div>
       </div>
     </div>
-   </div>
+ <!--   </div> -->
 
         <div class="join_form_div">
           <div>
-            <form action="customerjoinimpl.del" method="POST" onclick="return joinCheck(this)" class="bg-white p-5 contact-form">
+            <form action="customerjoinimpl.del" method="POST" onclick="return joinCheck(this)" >
              <div class="form-group"> 
                 <input type="text"  size="7" id="id" name="CUSTOMER_ID" class="form-control" placeholder="ID">
             

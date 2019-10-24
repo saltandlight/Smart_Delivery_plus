@@ -23,11 +23,6 @@ public class MainController {
 		
 		try {
 			list=pbiz.selectbest();
-			
-//			System.out.println(list.size());
-//			for(int i=0;i<list.size();i++) {
-//				System.out.println(list.toString());
-//			}
 			mv.addObject("plist",list);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

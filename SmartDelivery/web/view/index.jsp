@@ -40,7 +40,7 @@
   <style>
   .join_form_div{
 	margin: auto 0;
-	padding: 200px;
+	padding: 100px;
    }
   </style>
   </head>

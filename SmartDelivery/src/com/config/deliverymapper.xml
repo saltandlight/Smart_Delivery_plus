@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.DeliveryMapper">
+	
+	<insert id="insert" parameterType="delivery">
+		INSERT INTO DELIVERY VALUES (#{delivery_id},#{order_id},#{car_id},#{start_x},#{start_y},
+		#{end_x},#{end_y},#{fee},#{distance},
+		#{time},#{departure_time},#{arrive_time},#{delivery_status})	
+	</insert>
+	
+	<!-- <update id="update" parameterType="cart">
+		UPDATE CART_TB SET PWD=#{pwd},NAME=#{name} WHERE ID=#{id}
+	</update> -->
+	
+	<delete id="delete" parameterType="String">
+		DELETE FROM DELIVERY WHERE delivery_id=#{delivery_id}
+	</delete>
+	
+	<select id="select" parameterType="String" resultType="delivery">	
+		SELECT * FROM DELIVERY WHERE delivery_id=#{delivery_id}
+	</select>
+	
+	<select id="selectall" resultType="delivery">
+		SELECT * FROM DELIVERY
+	</select>
+
+    
+</mapper>
+
+
