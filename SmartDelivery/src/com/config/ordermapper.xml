@@ -34,8 +34,11 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 		WHERE SUBSTR(ORDER_ID,4) = (SELECT MAX(TO_NUMBER(SUBSTR(ORDER_ID,4))) FROM ORDER_TB)
 	</select>
 	
-	
-	
+	<select id="recmaxselect" parameterType="String" resultType="order">
+	SELECT * FROM ORDER_TB
+		WHERE SUBSTR(ORDER_ID,4) = (SELECT MAX(TO_NUMBER(SUBSTR(ORDER_ID,4))) FROM ORDER_TB WHERE CUSTOMER_ID=#{customer_id})
+	</select>
+		
 	<select id="selectall" resultType="order">
 		SELECT * FROM ORDER_TB
 	</select>

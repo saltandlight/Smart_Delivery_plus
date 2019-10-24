@@ -49,9 +49,11 @@ public class OrderBiz implements OrDependenciesBiz<String, Order> {
 
 	@Override
 	public Order select_oid(String obj) throws Exception {
-		// TODO Auto-generated method stub
 		return dao.select_oid(obj);
 	}
-	
-	
+
+	@Override
+	public Order select_rec(String obj) throws Exception {
+		return dao.select_rec(obj);
+	}	
 }

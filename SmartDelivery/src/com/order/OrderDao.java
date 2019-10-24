@@ -44,16 +44,16 @@ public class OrderDao implements OrDependenciesDao<String, Order> {
 
 	@Override
 	public Order oidmaxselect() throws Exception {
-		// TODO Auto-generated method stub
 		return om.oidmaxselect();
 	}
 
 	@Override
 	public Order select_oid(String obj) throws Exception {
-		// TODO Auto-generated method stub
 		return om.select_oid(obj);
 	}
 
-
-	
+	@Override
+	public Order select_rec(String obj) throws Exception {
+		return om.recmaxselect(obj);
+	}	
 }

@@ -77,18 +77,6 @@
 	        <ul class="navbar-nav ml-auto">
 	           <li class="nav-item active"><a href="customermain.del" class="nav-link">Home</a></li>
 	            <li class="nav-item active"><a href="productlist.del" class="nav-link">Shop</a></li>
-	    
-	       				   <!--  <li class="nav-item dropdown">
-              				<a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
-              				<div class="dropdown-menu" aria-labelledby="dropdown04"> -->
-              			
-              	      <!--       <a class="dropdown-item" href="customerproduct.del">Single Product</a>
-              	            <a class="dropdown-item" href="customercart.del">Cart</a>
-              	          
-              	            </div> -->
-                 	     <!--    </li> -->
-                 	         
-	            
 	          <c:choose>
 				 <c:when test="${loginuser != null }">
 			

@@ -78,13 +78,4 @@ public class MainController {
 		return mv;
 	}
 	
-	@RequestMapping("/customerdelcheck.del")
-	public ModelAndView deliverycheck(ModelAndView mv) {
-		mv.addObject("center","user/deliverycheck");
-		mv.setViewName("index");
-		return mv;
-	}
-	
-	
-	
 }

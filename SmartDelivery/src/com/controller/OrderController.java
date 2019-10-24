@@ -43,7 +43,7 @@ public class OrderController {
 	}
 	
 	@RequestMapping("/orderdetail.del")
-	public ModelAndView orderdetail(ModelAndView mv,Order order,String product_id,HttpSession session) {
+	public ModelAndView orderdetail(ModelAndView mv,Order order,String product_id, HttpSession session) {
 		System.out.println(product_id);
 
 		System.out.println(order.toString());
@@ -97,4 +97,27 @@ public class OrderController {
 		mv.setViewName("index");
 		return mv;
 	}
+	
+	@RequestMapping("/customerdelcheck.del")
+	public ModelAndView deliverycheck(ModelAndView mv, HttpSession session) {
+		
+		Customer customer=(Customer)session.getAttribute("loginuser");
+		try {
+			Order order=obiz.select_rec(customer.getCustomer_id());
+			Product product=pbiz.get(order.getProduct_id());
+			System.out.println(order.toString());
+			System.out.println(product.toString());
+			mv.addObject("o", order);
+			mv.addObject("p",product);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		mv.addObject("center","user/orderdetail");
+		mv.setViewName("index");
+		return mv;
+	}
+	
+	
 }
