@@ -1,7 +1,5 @@
 package com.vo;
 
-<<<<<<< HEAD
-=======
 /*
  * ORDER_TB	
  * ORDER_ID	VARCHAR2	20	-	-	1	-	-	-
@@ -18,7 +16,6 @@ package com.vo;
  	ORDER_STATUS	NUMBER	22	-	-	-	-	-	-
  	PRODUCT_ID	VARCHAR2	20	-	-	-	-	-	-
  * */
->>>>>>> e165b8831c631c94a980f9cd2c6e893d9b378c0a
 public class Order {
 	String order_id;
 	String customer_id;
@@ -33,10 +30,6 @@ public class Order {
 	String current_time;
 	int order_status;
 	String product_id;
-<<<<<<< HEAD
-	
-	public Order(String order_id, String customer_id, int order_price, String order_date, String order_addr,
-=======
 	int sub_id2;
 	
 	
@@ -57,16 +50,11 @@ public class Order {
 
 
 	public Order(String order_id, String customer_id, int order_price,  String order_addr,
->>>>>>> e165b8831c631c94a980f9cd2c6e893d9b378c0a
 			String order_phone, String order_pay, String order_wea, String cx, String cy, String current_time,
 			int order_status, String product_id) {
 		this.order_id = order_id;
 		this.customer_id = customer_id;
 		this.order_price = order_price;
-<<<<<<< HEAD
-		this.order_date = order_date;
-=======
->>>>>>> e165b8831c631c94a980f9cd2c6e893d9b378c0a
 		this.order_addr = order_addr;
 		this.order_phone = order_phone;
 		this.order_pay = order_pay;
@@ -156,9 +144,6 @@ public class Order {
 		this.product_id = product_id;
 	}
 	
-<<<<<<< HEAD
-	
-=======
 	public int getSub_id2() {
 		return sub_id2;
 	}
@@ -169,7 +154,6 @@ public class Order {
 	}
 
 
->>>>>>> e165b8831c631c94a980f9cd2c6e893d9b378c0a
 	@Override
 	public String toString() {
 		return "Order [order_id=" + order_id + ", customer_id=" + customer_id + ", order_price=" + order_price
@@ -180,8 +164,5 @@ public class Order {
 	}
 	
 	
-<<<<<<< HEAD
-=======
 	
->>>>>>> e165b8831c631c94a980f9cd2c6e893d9b378c0a
 }

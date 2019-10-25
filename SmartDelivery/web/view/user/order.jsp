@@ -98,11 +98,7 @@
 		    					<hr>
 		    					<p class="d-flex total-price">
 		    						<span>총 가격</span>
-<<<<<<< HEAD
-		    						<span class="total_price"></span>
-=======
 		    						<span class="total_price" ></span>
->>>>>>> e165b8831c631c94a980f9cd2c6e893d9b378c0a
 		    					</p>
 								</div>
 	          	</div>
@@ -171,8 +167,6 @@
 
 
   <script>
-<<<<<<< HEAD
-=======
   
   var cx;
   var cy;
@@ -196,11 +190,9 @@
 	    });
 	  } else {
 		  ;
-/* 	    alert('GPS를 지원하지 않습니다'); */
 	  }
 	}
 
->>>>>>> e165b8831c631c94a980f9cd2c6e893d9b378c0a
   function getData(){
 		$.ajax({
 			url:'https://cors-anywhere.herokuapp.com/http://www.kma.go.kr/wid/queryDFSRSS.jsp?zone=',
@@ -210,58 +202,11 @@
 			}
 		})
 	}
-<<<<<<< HEAD
 
 	function parsing(data){
 		//02,05,08,11,14,17,20,23 (1일 8회 업데이트)
 		var d = new Date();
-		var h = d.getHours();
-		/*d.getHours(); //현재 시간*/
-		var temp = "";
-		var pop = "";
-		var ws = "";
-		var weather = $(data).find('data');
-		var seq = $(weather).attr('seq');
-		weather.each(function(index, weather){
-			if(seq == "0"){
-				var hour = $(this).find('hour').text();
-				hour = "("+((Number(hour))-3) + "시 ~ " + hour +"시)";
-				var temp = $(this).find('temp').text();
-				temp += "°C";
-				var pop = $(this).find('pop').text();
-				pop += "%";
-				var ws = $(this).find('ws').text();
-				ws += "m/s";
-				alert(temp+' '+'강수확률:'+pop+' '+ws+'\n');
-				
-				return false;
-			}
-		});
-	}
-
-  
-  
-  
-		$(document).ready(function(){
-			getData();
-			var a = $('.price').text();
-			var price=a.replace("$","");
-			var b = $('.del_price').text();
-			var del_price=b.replace("$","");
-			var result;
-			result = eval("result="+price +"+"+ del_price+";");
-			$('.total_price').html("$"+result);
-			
-			
-			
-		var quantitiy=0;
-=======
-
-	function parsing(data){
-		//02,05,08,11,14,17,20,23 (1일 8회 업데이트)
-		var d = new Date();
-		var h = d.getHours();
-		/*d.getHours(); //현재 시간*/
+		var h = d.getHours()
 		var temp = "";
 		var pop = "";
 		var ws = "";
@@ -300,7 +245,6 @@
 			$('input[name="order_price"]').val(result2);
 			
 			var quantitiy=0;
->>>>>>> e165b8831c631c94a980f9cd2c6e893d9b378c0a
 		   $('.quantity-right-plus').click(function(e){
 		        
 		        // Stop acting like a button

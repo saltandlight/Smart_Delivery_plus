@@ -46,5 +46,10 @@ public class ProductDao implements DependenciesDao<String, Product> {
 		return pm.selectall();
 	}
 
+	@Override
+	public ArrayList<Product> selectbest() throws Exception {
+		return pm.selectbest();
+	}
+
 	
 }

@@ -46,4 +46,9 @@ public class ProductBiz implements DependenciesBiz<String, Product> {
 		return dao.select();
 	}
 
+	@Override
+	public ArrayList<Product> selectbest() throws Exception {
+		return dao.selectbest();
+	}
+
 }

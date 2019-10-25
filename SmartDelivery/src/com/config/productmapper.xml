@@ -17,6 +17,22 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 		WHERE SUBSTR(PRODUCT_ID,4) = (SELECT MAX(TO_NUMBER(SUBSTR(PRODUCT_ID,4))) FROM PRODUCT)
 	</select>
 	
+	<select id="selectbest" resultType="product">
+	
+		SELECT * FROM PRODUCT
+		WHERE PRODUCT_ID IN ( 
+			SELECT PRODUCT_ID
+			FROM (
+				SELECT PRODUCT_ID,COUNT(PRODUCT_ID)
+				FROM ORDER_TB 
+				GROUP BY PRODUCT_ID
+				ORDER BY COUNT(PRODUCT_ID) DESC) 
+			<![CDATA[ 	
+			WHERE ROWNUM <= 4
+			]]>
+		)
+	</select>
+	
 	<insert id="insert" parameterType="product">
 		INSERT INTO PRODUCT VALUES
 		(#{product_id},#{product_name},#{product_price},#{product_pic1})
