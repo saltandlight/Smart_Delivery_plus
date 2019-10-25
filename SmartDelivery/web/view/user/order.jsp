@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
     <div class="hero-wrap hero-bread" style="background-image: url('/SmartDelivery/view/user/images/bg_1.jpg');">
       <div class="container">
@@ -18,7 +19,7 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-xl-7 ftco-animate">
-						<form action="#" class="billing-form">
+						<form action="orderdetail.del?product_id=${p.product_id }" method="POST" class="billing-form">
 							<h3 class="mb-4 billing-heading">결제정보 입력하기</h3>
 	          	<div class="row align-items-end">
 	          		
@@ -43,7 +44,7 @@
 		            <div class="col-md-12">
 		            	<div class="form-group">
 	                	<label for="streetaddress">배송지 주소</label>
-	                  <input type="text" class="form-control" >
+	                  <input type="text" name="order_addr" id="order_addr" class="form-control" >
 	                </div>
 		            </div>
 		            
@@ -51,25 +52,34 @@
 		            <div class="col-md-12">
 	                <div class="form-group">
 	                	<label for="phone">수령인 전화번호</label>
-	                  <input type="text" class="form-control" placeholder="">
+	                  <input type="text" name="order_phone" id="order_phone" class="form-control" placeholder="">
 	                </div>
 	              </div>
 	              
+	  
+	             <input type="hidden" name="order_wea">
+	             <input type="hidden" name="cx">
+	             <input type="hidden" name="cy">  
+	             
+	             
                 <div class="w-100"></div>
                 <div class="col-md-12">
                 	<div class="form-group mt-4">
                 	  <label for="country">지불 방식</label>
 										<div class="radio">
-										  <label class="mr-3"><input type="radio" name="pay"> 카드 </label>
-										  <label><input type="radio" name="pay"> 무통장 입금</label>
+										  <label class="mr-3">
+										  <input type="radio" name="order_pay" value="카드"> 카드 </label>
+										  <label>
+										  <input type="radio" name="order_pay" value="무통장입금"> 무통장 입금
+										  </label>
 										</div>
 									</div>
 									
                 </div>
                 
 	            </div>
-	           <p><a href="orderdetail.del"class="btn btn-primary py-3 px-4">결제하기</a></p>
-	          </form><!-- END -->
+	          
+	         <!-- END -->
 					</div>
 					<div class="col-xl-5">
 	          <div class="row mt-5 pt-3">
@@ -88,10 +98,18 @@
 		    					<hr>
 		    					<p class="d-flex total-price">
 		    						<span>총 가격</span>
+<<<<<<< HEAD
 		    						<span class="total_price"></span>
+=======
+		    						<span class="total_price" ></span>
+>>>>>>> e165b8831c631c94a980f9cd2c6e893d9b378c0a
 		    					</p>
 								</div>
 	          	</div>
+	          		<input type="hidden"  name="order_price" class="in_price">
+	          	  <input type="submit" name="gyel" class="btn btn-primary py-3 px-4" value="결제하기">
+	          	
+	          	 </form>
 	          	<!-- <div class="col-md-12">
 	          		<div class="cart-detail p-3 p-md-4">
 	          			<h3 class="billing-heading mb-4">Payment Method</h3>
@@ -153,6 +171,36 @@
 
 
   <script>
+<<<<<<< HEAD
+=======
+  
+  var cx;
+  var cy;
+  var order_wea;
+  var result2;
+  function getLocation() {
+	  if (navigator.geolocation) { // GPS를 지원하면
+	    navigator.geolocation.getCurrentPosition(function(position) {
+	    	cx=position.coords.latitude; //37.12314654
+	    	cy=position.coords.longitude;
+	    	
+  		$('input[name="cx"]').val(cx);
+		$('input[name="cy"]').val(cy);
+   
+	    }, function(error) {
+	      console.error(error);
+	    }, {
+	      enableHighAccuracy: false,
+	      maximumAge: 0,
+	      timeout: Infinity
+	    });
+	  } else {
+		  ;
+/* 	    alert('GPS를 지원하지 않습니다'); */
+	  }
+	}
+
+>>>>>>> e165b8831c631c94a980f9cd2c6e893d9b378c0a
   function getData(){
 		$.ajax({
 			url:'https://cors-anywhere.herokuapp.com/http://www.kma.go.kr/wid/queryDFSRSS.jsp?zone=',
@@ -162,6 +210,7 @@
 			}
 		})
 	}
+<<<<<<< HEAD
 
 	function parsing(data){
 		//02,05,08,11,14,17,20,23 (1일 8회 업데이트)
@@ -206,6 +255,52 @@
 			
 			
 		var quantitiy=0;
+=======
+
+	function parsing(data){
+		//02,05,08,11,14,17,20,23 (1일 8회 업데이트)
+		var d = new Date();
+		var h = d.getHours();
+		/*d.getHours(); //현재 시간*/
+		var temp = "";
+		var pop = "";
+		var ws = "";
+		var weather = $(data).find('data');
+		var seq = $(weather).attr('seq');
+		weather.each(function(index, weather){
+			if(seq == "0"){
+				var hour = $(this).find('hour').text();
+				hour = "("+((Number(hour))-3) + "시 ~ " + hour +"시)";
+				var temp = $(this).find('temp').text();
+				temp += "°C";
+				var wfKor = $(this).find('wfKor').text();
+				wfKor += "";
+			
+				order_wea=temp+wfKor;
+				$('input[name="order_wea"]').val(order_wea);
+				return false;
+			}
+		});
+	}
+
+	
+	
+		$(document).ready(function(){
+			
+			getData();
+			getLocation();
+			var a = $('.price').text();
+			var price=a.replace('$','');
+			var b = $('.del_price').text();
+			var del_price=b.replace('$','');
+			
+			eval("result2="+price+"+"+del_price+";");
+			$('.total_price').text('$'+result2);		
+	
+			$('input[name="order_price"]').val(result2);
+			
+			var quantitiy=0;
+>>>>>>> e165b8831c631c94a980f9cd2c6e893d9b378c0a
 		   $('.quantity-right-plus').click(function(e){
 		        
 		        // Stop acting like a button
@@ -237,4 +332,7 @@
 		    });
 		    
 		});
+		
+		
+		
 	</script>

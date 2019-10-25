@@ -31,12 +31,12 @@ th, td{
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-xl-7 ftco-animate">
-				<h2 class="mb-4 billing-heading">주문 #201910171</h2>
+				<h2 class="mb-4 billing-heading">주문 #${o.order_id }</h2>
 	          	<div class="row align-items-end">
 	          		
                 <div class="w-100"></div>
 		            <div class="col-md-12">
-		              <p>주문 #201910171가 2019년 10월 17일에 이루어졌으며 현재 입금확인 중입니다.</p>
+		              <p>주문 #${o.order_id }가 ${o.order_date }에 이루어졌으며 현재 입금확인 중입니다.</p>
 		            	
 		            	</div>
 		            </div>
@@ -46,7 +46,7 @@ th, td{
 		            	<div class="form-group">
 	                	<h4>주문 업데이트</h4>
 	                	<br>
-	                    <p>ID01님(10월 17일) $100 입금</p>
+	                    <p>ID01님 $${o.order_price } 입금</p>
 	                </div>
 		            </div>
 		            
@@ -58,11 +58,11 @@ th, td{
 	                	<br>
 	                 	 <table class="table1">
 	                 	   <tr><td>상품</td><td>통계</td></tr>
-	                       <tr><td>BELL PEPPER</td><td>$80</td></tr>
+	                       <tr><td>${p.product_name }</td><td>$${p.product_price }</td></tr>
 	                 	   <tr><td>배송</td><td>$20</td></tr>
-	                       <tr><td>합계</td><td>$100</td></tr>	  
-	                       <tr><td>지불 방법</td><td>카드</td></tr>	  
-	                       <tr><td>총계</td><td>$100</td></tr>	                  
+	                       <tr><td>합계</td><td>$${o.order_price }</td></tr>	  
+	                       <tr><td>지불 방법</td><td>${o.order_pay }</td></tr>	  
+	                       <tr><td>총계</td><td>$${o.order_price }</td></tr>	                  
 	                    </table>
 	                </div>
 	              </div>

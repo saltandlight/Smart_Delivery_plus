@@ -1,5 +1,24 @@
 package com.vo;
 
+<<<<<<< HEAD
+=======
+/*
+ * ORDER_TB	
+ * ORDER_ID	VARCHAR2	20	-	-	1	-	-	-
+ 	CUSTOMER_ID	VARCHAR2	40	-	-	-	-	-	-
+ 	ORDER_PRICE	NUMBER	22	-	-	-	-	-	-
+ 	ORDER_DATE	DATE	7	-	-	-	-	-	-
+ 	ORDER_ADDR	VARCHAR2	50	-	-	-	-	-	-
+ 	ORDER_PHONE	VARCHAR2	20	-	-	-	-	-	-
+ 	ORDER_PAY	VARCHAR2	20	-	-	-	-	-	-
+ 	ORDER_WEA	VARCHAR2	20	-	-	-	-	-	-
+ 	CX	VARCHAR2	20	-	-	-	-	-	-
+ 	CY	VARCHAR2	20	-	-	-	-	-	-
+ 	CURRENT_TIME	VARCHAR2	20	-	-	-	-	-	-
+ 	ORDER_STATUS	NUMBER	22	-	-	-	-	-	-
+ 	PRODUCT_ID	VARCHAR2	20	-	-	-	-	-	-
+ * */
+>>>>>>> e165b8831c631c94a980f9cd2c6e893d9b378c0a
 public class Order {
 	String order_id;
 	String customer_id;
@@ -14,14 +33,40 @@ public class Order {
 	String current_time;
 	int order_status;
 	String product_id;
+<<<<<<< HEAD
 	
 	public Order(String order_id, String customer_id, int order_price, String order_date, String order_addr,
+=======
+	int sub_id2;
+	
+	
+	public Order() {
+	}
+
+	
+	public Order(int order_price, String order_addr, String order_phone, String order_pay, String order_wea,
+			String cx, String cy) {
+		this.order_price = order_price;
+		this.order_addr = order_addr;
+		this.order_phone = order_phone;
+		this.order_pay = order_pay;
+		this.order_wea=order_wea;
+		this.cx=cx;
+		this.cy=cy;
+	}
+
+
+	public Order(String order_id, String customer_id, int order_price,  String order_addr,
+>>>>>>> e165b8831c631c94a980f9cd2c6e893d9b378c0a
 			String order_phone, String order_pay, String order_wea, String cx, String cy, String current_time,
 			int order_status, String product_id) {
 		this.order_id = order_id;
 		this.customer_id = customer_id;
 		this.order_price = order_price;
+<<<<<<< HEAD
 		this.order_date = order_date;
+=======
+>>>>>>> e165b8831c631c94a980f9cd2c6e893d9b378c0a
 		this.order_addr = order_addr;
 		this.order_phone = order_phone;
 		this.order_pay = order_pay;
@@ -111,7 +156,20 @@ public class Order {
 		this.product_id = product_id;
 	}
 	
+<<<<<<< HEAD
 	
+=======
+	public int getSub_id2() {
+		return sub_id2;
+	}
+
+
+	public void setSub_id2(int sub_id22) {
+		this.sub_id2 = sub_id22;
+	}
+
+
+>>>>>>> e165b8831c631c94a980f9cd2c6e893d9b378c0a
 	@Override
 	public String toString() {
 		return "Order [order_id=" + order_id + ", customer_id=" + customer_id + ", order_price=" + order_price
@@ -122,4 +180,8 @@ public class Order {
 	}
 	
 	
+<<<<<<< HEAD
+=======
+	
+>>>>>>> e165b8831c631c94a980f9cd2c6e893d9b378c0a
 }

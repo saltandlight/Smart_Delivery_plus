@@ -3,6 +3,7 @@
 PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.mapper.OrderMapper">
+<<<<<<< HEAD
 
 	<insert id="insert" parameterType="order">
 		INSERT INTO ORDER_TB VALUES (#{order_id},#{customer_id},#{order_price},SYSDATE,#{order_addr},#{order_phone},
@@ -10,6 +11,16 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	</insert>
 	
 	<!-- <update id="update" parameterType="order">
+=======
+	
+	<insert id="insert" parameterType="order">
+		INSERT INTO ORDER_TB VALUES (#{order_id},#{customer_id},#{order_price},
+		SYSDATE,#{order_addr},#{order_phone},#{order_pay},#{order_wea},
+		#{cx},#{cy},#{current_time}, #{order_status}, #{product_id})	
+	</insert>
+	
+	<!-- <update id="update" parameterType="cart">
+>>>>>>> e165b8831c631c94a980f9cd2c6e893d9b378c0a
 		UPDATE CART_TB SET PWD=#{pwd},NAME=#{name} WHERE ID=#{id}
 	</update> -->
 	
@@ -17,6 +28,7 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 		DELETE FROM ORDER_TB WHERE order_id=#{order_id}
 	</delete>
 	
+<<<<<<< HEAD
 	<select id="select" parameterType="String" resultType="order">	
 		SELECT * FROM ORDER_TB WHERE customer_id=#{customer_id}	
 	</select>
@@ -27,3 +39,31 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 
 
 </mapper>
+=======
+	<select id="select" parameterType="String" 
+	resultType="order">	
+		SELECT * FROM ORDER_TB WHERE customer_id=#{customer_id}	
+	</select>
+	
+	<select id="select_oid" parameterType="String" 
+	resultType="order">	
+		SELECT * FROM ORDER_TB WHERE order_id=#{order_id }	
+	</select>
+	
+	
+	<select id="oidmaxselect" resultType="order">
+		SELECT * FROM ORDER_TB
+		WHERE SUBSTR(ORDER_ID,4) = (SELECT MAX(TO_NUMBER(SUBSTR(ORDER_ID,4))) FROM ORDER_TB)
+	</select>
+	
+	
+	
+	<select id="selectall" resultType="order">
+		SELECT * FROM ORDER_TB
+	</select>
+		
+	
+</mapper>
+
+
+>>>>>>> e165b8831c631c94a980f9cd2c6e893d9b378c0a

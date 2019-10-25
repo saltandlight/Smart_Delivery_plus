@@ -6,7 +6,11 @@ PUBLIC "-//mybatis.org/DTD Config 3.0//EN"
 	<typeAliases>
 		<typeAlias type="com.vo.Customer" alias="customer"/>
 		<typeAlias type="com.vo.Product" alias="product"/>
+<<<<<<< HEAD
 		<typeAlias type="com.vo.Order" alias="order"/>
+=======
+		<typeAlias type="com.vo.Order" alias="order"/>		
+>>>>>>> e165b8831c631c94a980f9cd2c6e893d9b378c0a
 	</typeAliases>
 	
 	<mappers>
