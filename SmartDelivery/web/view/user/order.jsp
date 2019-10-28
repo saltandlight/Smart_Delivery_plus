@@ -208,6 +208,7 @@
 			
 				order_wea=temp+wfKor;
 				$('input[name="order_wea"]').val(order_wea);
+				alert(order_wea);
 				return false;
 			}
 		});
