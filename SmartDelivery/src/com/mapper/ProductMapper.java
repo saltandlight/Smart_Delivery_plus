@@ -10,5 +10,7 @@ public interface ProductMapper {
 	public void update(Product obj);
 	public Product select(String obj);	
 	public ArrayList<Product> selectall();
+	public ArrayList<Product> selectbest();
 	public Product pidmaxselect();
+	
 }

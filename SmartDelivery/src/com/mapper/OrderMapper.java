@@ -13,4 +13,5 @@ public interface OrderMapper {
 	public Order select_oid(String obj);
 	public ArrayList<Order> selectall();
 	public Order oidmaxselect();
+	public Order recmaxselect(String obj);
 }

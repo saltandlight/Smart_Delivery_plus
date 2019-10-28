@@ -2,7 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>  
-
+ <script src="https://apis.openapi.sk.com/tmap/jsv2?version=1&format=javascript&appkey=8fe8578d-7236-4214-82fe-a41d45b6d10b"></script>
+        
 <style>
 .table1{
 	border-collapse:collapse;
@@ -46,7 +47,7 @@ th, td{
 		            	<div class="form-group">
 	                	<h4>주문 업데이트</h4>
 	                	<br>
-	                    <p>ID01님 $${o.order_price } 입금</p>
+	                    <p>${o.customer_id }님 $${o.order_price } 입금</p>
 	                </div>
 		            </div>
 		            
@@ -66,81 +67,29 @@ th, td{
 	                    </table>
 	                </div>
 	              </div>
+	              <c:choose>
+				   <c:when test="${s!= null }">
 	              
-                <!-- <div class="w-100"></div>
-                <div class="col-md-12">
-                	<div class="form-group mt-4">
-                	  <label for="country">지불 방식</label>
-										<div class="radio">
-										  <label class="mr-3"><input type="radio" name="pay"> 카드 </label>
-										  <label><input type="radio" name="pay"> 무통장 입금</label>
-										</div>
-									</div>-->
-									
-                </div>
+	             	  <div class="col-md-12">
+	               			<br><h4>나의 상품 위치</h4><br>
+	                  		 <div id="map_div"></div>  
+	               		</div>
+	               	</c:when>
+	               	</c:choose>	
+	               		
+                	</div>
                 
 	            </div> 
 					</div>
 					<div class="col-xl-5">
-	       <!--    <div class="row mt-5 pt-3">
-	          	<div class="col-md-12 d-flex mb-5">
-	          		<div class="cart-detail cart-total p-3 p-md-4">
-	          			<h3 class="billing-heading mb-4">카트 총 가격</h3>
-	          			<p class="d-flex">
-		    						<span>가격</span>
-		    						<span>$20.60</span>
-		    					</p>
-		    					<p class="d-flex">
-		    						<span>배송비</span>
-		    						<span>$0.00</span>
-		    					</p>
-		    					
-		    					<hr>
-		    					<p class="d-flex total-price">
-		    						<span>총 가격</span>
-		    						<span>$20.60</span>
-		    					</p>
-								</div>
-	          	</div> 
-	          	<div class="col-md-12">
-	          		<div class="cart-detail p-3 p-md-4">
-	          			<h3 class="billing-heading mb-4">Payment Method</h3>
-									<div class="form-group">
-										<div class="col-md-12">
-											<div class="radio">
-											   <label><input type="radio" name="optradio" class="mr-2"> Direct Bank Tranfer</label>
-											</div>
-										</div>
-									</div>
-									<div class="form-group">
-										<div class="col-md-12">
-											<div class="radio">
-											   <label><input type="radio" name="optradio" class="mr-2"> Check Payment</label>
-											</div>
-										</div>
-									</div>
-									<div class="form-group">
-										<div class="col-md-12">
-											<div class="radio">
-											   <label><input type="radio" name="optradio" class="mr-2"> Paypal</label>
-											</div>
-										</div>
-									</div>
-									<div class="form-group">
-										<div class="col-md-12">
-											<div class="checkbox">
-											   <label><input type="checkbox" value="" class="mr-2"> I have read and accept the terms and conditions</label>
-											</div>
-										</div>
-									</div>
-									<p><a href="#"class="btn btn-primary py-3 px-4">Place an order</a></p>
-								</div>
-	          	</div>
-	          </div>
-          </div>-->
-        </div>
-      </div>
+        			</div>
+                </div>
+        
     </section> 
+
+
+
+
 
 		<section class="ftco-section ftco-no-pt ftco-no-pb py-5 bg-light">
       <div class="container py-4">
@@ -164,7 +113,7 @@ th, td{
 
   <script>
 		$(document).ready(function(){
-
+			initTmap();
 		var quantitiy=0;
 		   $('.quantity-right-plus').click(function(e){
 		        
@@ -197,6 +146,21 @@ th, td{
 		    });
 		    
 		});
+		  function initTmap(){
+	        	var map = new Tmapv2.Map("map_div",  
+	        	{
+	        		center: new Tmapv2.LatLng(${s.car_x },${s.car_y }), 
+	        		width: "610px",
+	        		height: "400px",
+	        		zoom: 15
+	        	});
+	        	 
+
+	        	var marker = new Tmapv2.Marker({
+	        		position: new Tmapv2.LatLng(${s.car_x },${s.car_y }),
+	        		map: map
+	        	});	
+	        }
 	</script> 
 	
 	

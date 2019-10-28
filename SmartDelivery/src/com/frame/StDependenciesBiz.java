@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import org.springframework.transaction.annotation.Transactional;
 
-public interface DependenciesBiz<K,V> {
+public interface StDependenciesBiz<K,V> {
 	@Transactional
 	public void register(V v) throws Exception;
 	@Transactional
@@ -15,7 +15,5 @@ public interface DependenciesBiz<K,V> {
 	public ArrayList<V> get() throws Exception;
 	
 	//Specialized
-	public V pidmaxselect() throws Exception;
-	public ArrayList<V> selectbest() throws Exception;
-	
+	public V selectpos(K k) throws Exception;
 }

@@ -6,16 +6,16 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
-import com.frame.OrDependenciesBiz;
-import com.frame.OrDependenciesDao;
+import com.frame.StDependenciesBiz;
+import com.frame.StDependenciesDao;
 import com.vo.Status;
 
 
 @Service("sbiz")
-public class StatusBiz implements OrDependenciesBiz<String, Status> {
+public class StatusBiz implements StDependenciesBiz<String, Status> {
 
 	@Resource(name="sdao")
-	OrDependenciesDao<String, Status> sdao;
+	StDependenciesDao<String, Status> sdao;
 
 	@Override
 	public void register(Status v) throws Exception {
@@ -38,27 +38,22 @@ public class StatusBiz implements OrDependenciesBiz<String, Status> {
 	}
 
 	@Override
-	public ArrayList<Status> get(String k) throws Exception {
-		
-		return sdao.select(k);
-	}
-
-	@Override
 	public ArrayList<Status> get() throws Exception {
 		// TODO Auto-generated method stub
 		return sdao.select();
 	}
 
+
 	@Override
-	public Status oidmaxselect() throws Exception {
+	public Status get(String k) throws Exception {
 		// TODO Auto-generated method stub
-		return sdao.oidmaxselect();
+		return sdao.select(k);
 	}
 
 	@Override
-	public Status select_oid(String obj) throws Exception {
+	public Status selectpos(String k) throws Exception {
 		// TODO Auto-generated method stub
-		return sdao.select_oid(obj);
+		return sdao.selectpos(k);
 	}
 
 	

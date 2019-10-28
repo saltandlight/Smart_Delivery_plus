@@ -64,6 +64,9 @@ div#log_form_div{
 	margin:auto 0;
 }
 
+div#join_form_div1{
+	margin:auto 0;
+}
 
 [tabindex="-1"]:focus {
   outline: 0 !important; }

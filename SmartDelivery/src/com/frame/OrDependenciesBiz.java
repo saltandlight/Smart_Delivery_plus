@@ -18,4 +18,5 @@ public interface OrDependenciesBiz<K,V> {
 	//Specialized
 	public V oidmaxselect() throws Exception;
 	public V select_oid(String obj) throws Exception;
+	public V select_rec(String obj) throws Exception;
 }
