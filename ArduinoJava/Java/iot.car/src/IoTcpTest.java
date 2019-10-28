@@ -117,7 +117,10 @@ public class IoTcpTest {
 			try {
 				while (true) {
 					String str = din.readUTF();
-					System.out.println(str);
+					if(str!=null) {
+						System.out.println(str);
+						ioTCanSerialTest.sendData(str);
+					}
 				}
 			} catch (Exception e) {
 
@@ -126,9 +129,8 @@ public class IoTcpTest {
 	}
 
 	public static void main(String[] args) {
-		IoTcpTest ioTcpTest = null;
 		try {
-			ioTcpTest = new IoTcpTest("70.12.231.197", 8889);
+			IoTcpTest ioTcpTest = new IoTcpTest("70.12.231.197", 8889);
 //			ioTcpTest.start();
 		} catch (Exception e) {
 			e.printStackTrace();
