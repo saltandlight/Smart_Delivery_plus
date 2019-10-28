@@ -8,6 +8,7 @@ PUBLIC "-//mybatis.org/DTD Config 3.0//EN"
 		<typeAlias type="com.vo.Product" alias="product"/>
 		<typeAlias type="com.vo.Order" alias="order"/>	
 		<typeAlias type="com.vo.Picture" alias="picture"/>	
+		<typeAlias type="com.vo.Status" alias="status"/>
 	</typeAliases>
 	
 	<mappers>
@@ -15,6 +16,7 @@ PUBLIC "-//mybatis.org/DTD Config 3.0//EN"
 		<mapper resource="com/config/productmapper.xml"/>
 		<mapper resource="com/config/ordermapper.xml"/>
 		<mapper resource="com/config/picturemapper.xml"/>
+		<mapper resource="com/config/statusmapper.xml"/>
 	</mappers>
 </configuration>
 
