@@ -519,6 +519,10 @@
         	 <div class="col-md-12">   
         		 <div class="picture">
          	          <h3 class="card-title">Picture</h3>
+<<<<<<< HEAD:SmartDelivery1/web/view/admin/dashboard.jsp
+=======
+         	          
+>>>>>>> cc03a3011cf765371cb86843ee55912301871989:SmartDelivery/web/view/admin/dashboard.jsp
             	  </div>
               </div>
               <!--  Picture End-->

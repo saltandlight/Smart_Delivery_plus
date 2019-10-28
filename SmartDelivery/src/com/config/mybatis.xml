@@ -9,6 +9,7 @@ PUBLIC "-//mybatis.org/DTD Config 3.0//EN"
 		<typeAlias type="com.vo.Order" alias="order"/>		
 		<typeAlias type="com.vo.Status" alias="status"/>		
 		<typeAlias type="com.vo.Delivery" alias="delivery"/>	
+		<typeAlias type="com.vo.Order" alias="order"/>	
 	</typeAliases>
 	
 	<mappers>

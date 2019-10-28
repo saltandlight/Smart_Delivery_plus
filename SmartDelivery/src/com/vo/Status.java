@@ -1,6 +1,9 @@
 package com.vo;
 
+import java.util.Date;
+
 public class Status {
+	
 	String car_id;
 	String car_num;
 	String driver_name;
@@ -11,20 +14,15 @@ public class Status {
 	String car_humid;
 	String car_pic;
 	String car_impact;
-	String current_time;
+	Date current_timel;
 	
 	public Status() {
 		
 	}
-	
-	public Status(String car_id, String car_x, String car_y) {
-		this.car_id = car_id;
-		this.car_x = car_x;
-		this.car_y = car_y;
-	}
 
 	public Status(String car_id, String car_num, String driver_name, String driver_phone, String car_x, String car_y,
-			String car_temper, String car_humid, String car_pic, String car_impact, String current_time) {
+			String car_temper, String car_humid, String car_pic, String car_impact, Date current_timel) {
+	
 		this.car_id = car_id;
 		this.car_num = car_num;
 		this.driver_name = driver_name;
@@ -35,7 +33,7 @@ public class Status {
 		this.car_humid = car_humid;
 		this.car_pic = car_pic;
 		this.car_impact = car_impact;
-		this.current_time = current_time;
+		this.current_timel = current_timel;
 	}
 
 	public String getCar_id() {
@@ -118,20 +116,25 @@ public class Status {
 		this.car_impact = car_impact;
 	}
 
-	public String getCurrent_time() {
-		return current_time;
+	public Date getCurrent_timel() {
+		return current_timel;
 	}
 
-	public void setCurrent_time(String current_time) {
-		this.current_time = current_time;
+	public void setCurrent_timel(Date current_timel) {
+		this.current_timel = current_timel;
 	}
 
 	@Override
 	public String toString() {
 		return "Status [car_id=" + car_id + ", car_num=" + car_num + ", driver_name=" + driver_name + ", driver_phone="
 				+ driver_phone + ", car_x=" + car_x + ", car_y=" + car_y + ", car_temper=" + car_temper + ", car_humid="
-				+ car_humid + ", car_pic=" + car_pic + ", car_impact=" + car_impact + ", current_time=" + current_time
+				+ car_humid + ", car_pic=" + car_pic + ", car_impact=" + car_impact + ", current_timel=" + current_timel
 				+ "]";
 	}
+	
+	
+	
+	
+	
 	
 }

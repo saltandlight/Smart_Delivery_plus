@@ -3,7 +3,7 @@ package com.controller;
 import java.util.ArrayList;
 
 import javax.annotation.Resource;
-
+import java.io.IOException;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -28,7 +28,7 @@ public class MainController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		mv.addObject("center","center");
 		mv.setViewName("index");
 		return mv;
