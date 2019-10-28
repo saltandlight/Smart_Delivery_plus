@@ -6,13 +6,15 @@ PUBLIC "-//mybatis.org/DTD Config 3.0//EN"
 	<typeAliases>
 		<typeAlias type="com.vo.Customer" alias="customer"/>
 		<typeAlias type="com.vo.Product" alias="product"/>
-		<typeAlias type="com.vo.Order" alias="order"/>		
+		<typeAlias type="com.vo.Order" alias="order"/>	
+		<typeAlias type="com.vo.Picture" alias="picture"/>	
 	</typeAliases>
 	
 	<mappers>
 		<mapper resource="com/config/customermapper.xml"/>
 		<mapper resource="com/config/productmapper.xml"/>
 		<mapper resource="com/config/ordermapper.xml"/>
+		<mapper resource="com/config/picturemapper.xml"/>
 	</mappers>
 </configuration>
 

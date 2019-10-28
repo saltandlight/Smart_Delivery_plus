@@ -743,8 +743,7 @@
         	 <div class="col-md-12">   
         		 <div class="picture">
          	          <h3 class="card-title">Picture</h3>
-         	          <li>제목: ${subject}<br>
-					 <li>업로드파일1: <a href=/upload/${file1}>${ofile1}</a><br>
+         	          
             	  </div>
               </div>
               <!--  Picture End-->

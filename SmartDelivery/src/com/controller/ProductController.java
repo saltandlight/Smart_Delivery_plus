@@ -60,9 +60,9 @@ public class ProductController {
 			
 			pbiz.register(product);
 			
-			String dir = servletContext.getRealPath("/view/user/images/");
-			System.out.println("dir:"+dir);
-			Util.saveFile(product.getMf(), dir);
+//			String dir = servletContext.getRealPath("/view/user/images/");
+//			System.out.println("dir:"+dir);
+//			Util.saveFile(product.getMf(), dir);
 			
 		} catch (Exception e) {
 			
