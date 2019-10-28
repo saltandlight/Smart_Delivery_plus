@@ -97,7 +97,7 @@ public class CanSerialTest implements SerialPortEventListener {
 					boolean result = checkSerialData(candata);
 					if (result == true) {
 						System.out.println("Receive Low Data:" + candata);
-						arduinoSerialTest.start(candata);
+						arduinoSerialTest.sendMsg(candata);
 					}
 				}
 

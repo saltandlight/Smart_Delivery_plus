@@ -97,7 +97,7 @@ public class IoTCanSerialTest implements SerialPortEventListener {
 
 			try {
 				if(bin.available() > 0) {
-					int numBytes = bin.read(readBuffer);
+//					int numBytes = bin.read(readBuffer);
 					String candata = new String(readBuffer);
 					boolean result = checkSerialData(candata);
 					System.out.println(candata+result);
