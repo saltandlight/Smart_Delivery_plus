@@ -48,7 +48,7 @@ public class StatusDao implements StDependenciesDao<String, Status> {
 	@Override
 	public Status selectpos(String k) throws Exception {
 		// TODO Auto-generated method stub
-		return sm.oidmaxselect();
+		return sm.selectpos(k);
 	}
 
 	
