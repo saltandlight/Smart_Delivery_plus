@@ -42,19 +42,19 @@ public class LogAdvisor {
 		user_log.debug("user : " + loginuser.getCustomer_id() +" logged in.");
 	}
 	
-	@AfterReturning(pointcut="execution(* com.controller.OrderController.productorder(..))",
-			returning="obj")
-	public void productLogging(JoinPoint jp, Object obj) {
-		
-		System.out.println("order(target) : "+obj.toString());
-		ModelAndView mv=(ModelAndView) obj;
-	    
-		System.out.println(mv.getModel().toString());
-		Product product=(Product) mv.getModel().get("p");
-		
-		work_log.debug(product.getProduct_name()+","+product.getProduct_price());
-	}
-	
+//	@AfterReturning(pointcut="execution(* com.controller.OrderController.productorder(..))",
+//			returning="obj")
+//	public void productLogging(JoinPoint jp, Object obj) {
+//		
+//		System.out.println("order(target) : "+obj.toString());
+//		ModelAndView mv=(ModelAndView) obj;
+//	    
+//		System.out.println(mv.getModel().toString());
+//		Product product=(Product) mv.getModel().get("p");
+//		
+//		work_log.debug(product.getProduct_name()+","+product.getProduct_price());
+//	}
+//	
 
 	@AfterReturning(pointcut="execution(* com.controller.OrderController.orderdetail(..))",
 			returning="obj")
@@ -62,7 +62,14 @@ public class LogAdvisor {
 		ModelAndView mv=(ModelAndView)obj;
 		
 		Order order=(Order)mv.getModel().get("o");
-		work_log.debug(order.getOrder_wea());
+		
+		System.out.println(mv.getModel().toString());
+		Product product=(Product) mv.getModel().get("p");
+		
+		work_log.debug(product.getProduct_name()+" , "+product.getProduct_price()+" , "+order.getOrder_wea());
+		
+		
+//		data_log.debug(order.getOrder_wea());
 	}
 	
 	
