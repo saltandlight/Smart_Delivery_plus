@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.ProductMapper">
+	
+	<select id="select" parameterType="String" 
+	resultType="product">
+		SELECT * FROM PRODUCT WHERE PRODUCT_ID=#{obj}
+	</select>
+	<select id="selectall" resultType="product">
+		SELECT * FROM PRODUCT
+	</select>
+	
+	<select id="pidmaxselect" resultType="product">
+		SELECT * FROM PRODUCT 
+		WHERE SUBSTR(PRODUCT_ID,4) = (SELECT MAX(TO_NUMBER(SUBSTR(PRODUCT_ID,4))) FROM PRODUCT)
+	</select>
+	
+	<select id="selectbest" resultType="product">
+	
+		SELECT * FROM PRODUCT
+		WHERE PRODUCT_ID IN ( 
+			SELECT PRODUCT_ID
+			FROM (
+				SELECT PRODUCT_ID,COUNT(PRODUCT_ID)
+				FROM ORDER_TB 
+				GROUP BY PRODUCT_ID
+				ORDER BY COUNT(PRODUCT_ID) DESC) 
+			<![CDATA[ 	
+			WHERE ROWNUM <= 4
+			]]>
+		)
+	</select>
+	
+	<insert id="insert" parameterType="product">
+		INSERT INTO PRODUCT VALUES
+		(#{product_id},#{product_name},#{product_price},#{product_pic1})
+	</insert>
+	<update id="update" parameterType="product">
+		UPDATE PRODUCT SET PRODUCT_NAME=#{product_name},PRODUCT_PRICE=#{product_price},PRODUCT_PIC1=#{product_pic1}
+		 WHERE PRODUCT_ID=#{product_id}
+	</update>
+	<delete id="delete" parameterType="String">
+		DELETE FROM PRODUCT WHERE PRODUCT_ID=#{product_id}
+	</delete>
+	
+</mapper>
+
+
