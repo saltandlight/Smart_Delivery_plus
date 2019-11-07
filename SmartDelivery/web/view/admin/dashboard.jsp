@@ -13,6 +13,7 @@
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
   <!-- CSS Files -->
   <link href="css/material-dashboard.css?v=2.1.1" rel="stylesheet" />
@@ -31,17 +32,13 @@
      width:700px;
      height:300px;
    }
-    
-   .wea_order{
-     width:auto;
-     height:auto;
-   }
+  
   
   </style>
 </head>
 <body class="">
   <div class="wrapper ">
-    <div class="sidebar" data-color="purple" data-background-color="white" data-image="/SmartDelivery/admin/view/img/sidebar-1.jpg">
+    <div class="sidebar" data-color="purple" data-background-color="white" data-image="img/sidebar-1.jpg">
       <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
@@ -331,8 +328,7 @@
             <div class="col-md-4">
               <div class="card card-chart">
                 <div class="card-header card-header-success">
-                <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-                  <!-- <div class="ct-chart" id="dailySalesChart"></div> -->
+                  <div class="ct-chart" id="dailySalesChart"></div>
                 </div>
                 <div class="card-body">
                   <h4 class="card-title">Daily Sales</h4>
@@ -349,38 +345,7 @@
             <div class="col-md-4">
               <div class="card card-chart">
                 <div class="card-header card-header-warning">
-                <div id="container2" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-
-<table id="datatable">
-    <thead>
-        <tr>
-            <th></th>
-            <th>날씨</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th>구름 많음</th>
-            <td>9</td>
-        </tr>
-        <tr>
-            <th>맑음</th>
-            <td>96</td>
-        </tr>
-        <tr>
-            <th>비</th>
-            <td>7</td>
-        </tr>
-        <tr>
-            <th>흐림</th>
-            <td>10</td>
-        </tr>
-    </tbody>
-</table>
-                
-                 <!--  <div class="ct-chart" id="websiteViewsChart"></div> -->
-                  
-                  
+                  <div class="ct-chart" id="websiteViewsChart"></div>
                 </div>
                 <div class="card-body">
                   <h4 class="card-title">Real Time Visitors</h4>
@@ -396,13 +361,7 @@
             <div class="col-md-4">
               <div class="card card-chart">
                 <div class="card-header card-header-danger">
-                  
-                <div class="wea_order">
-  					<img src="/SmartDelivery/view/admin/img/orderdate.JPG">
-				</div>
-                
-                
-                <!--   <div class="ct-chart" id="completedTasksChart"></div> -->
+                  <div class="ct-chart" id="completedTasksChart"></div>
                 </div>
                 <div class="card-body">
                   <h4 class="card-title">Data Correlation</h4>
@@ -560,6 +519,10 @@
         	 <div class="col-md-12">   
         		 <div class="picture">
          	          <h3 class="card-title">Picture</h3>
+<<<<<<< HEAD:SmartDelivery1/web/view/admin/dashboard.jsp
+=======
+         	          
+>>>>>>> cc03a3011cf765371cb86843ee55912301871989:SmartDelivery/web/view/admin/dashboard.jsp
             	  </div>
               </div>
               <!--  Picture End-->
@@ -718,6 +681,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
   <!-- Library for adding dinamically elements -->
   <script src="js/plugins/arrive.min.js"></script>
+  <!--  Google Maps Plugin    -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
   <!-- Chartist JS -->
   <script src="js/plugins/chartist.min.js"></script>
   <!--  Notifications Plugin    -->
@@ -729,7 +694,6 @@
   <script>
     $(document).ready(function() {
       $().ready(function() {
-    	  
         $sidebar = $('.sidebar');
 
         $sidebar_img_container = $sidebar.find('.sidebar-background');
@@ -896,380 +860,15 @@
 
         });
       });
-      
-      
-      
-      Highcharts.chart('container2', {
-    	    data: {
-    	        table: 'datatable'
-    	    },
-    	    chart: {
-    	        type: 'column'
-    	    },
-    	    title: {
-    	        text: '날씨별 주문량'
-    	    },
-    	    yAxis: {
-    	        allowDecimals: false,
-    	        title: {
-    	            text: '주문량'
-    	        }
-    	    },
-    	    tooltip: {
-    	        formatter: function () {
-    	            return '<b>' + this.series.name + '</b><br/>' +
-    	                this.point.y + ' ' + this.point.name.toLowerCase();
-    	        }
-    	    }
-    	});
-      
-      
-      
-      
-      
-      
-      
-      Highcharts.chart('container', {
-          chart: {
-              type: 'column'
-          },
-          title: {
-              text: '상품별 주문량'
-          },
-          subtitle: {
-              text: ''
-          },
-          xAxis: {
-              type: 'category'
-          },
-          yAxis: {
-              title: {
-                  text: '주문량'
-              }
-
-          },
-          legend: {
-              enabled: false
-          },
-          plotOptions: {
-              series: {
-                  borderWidth: 0,
-                  dataLabels: {
-                      enabled: true,
-                      format: '{point.y:.1f}'
-                  }
-              }
-          },
-
-          tooltip: {
-              headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
-              pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}</b> of total<br/>'
-          },
-
-          series: [
-              {
-                  name: "Browsers",
-                  colorByPoint: true,
-                  data: [
-                      {
-                          name: "APPLE",
-                          y: 7,
-                          drilldown: "APPLE"
-                      },
-                      {
-                          name: "BELL PEPPER",
-                          y: 1,
-                          drilldown: "BELL PEPPER"
-                      },
-                      {
-                          name: "CARROTS",
-                          y: 5,
-                          drilldown: "CARROTS"
-                      },
-                      {
-                          name: "CHILLI",
-                          y: 1,
-                          drilldown: "CHILLI"
-                      },
-                      {
-                          name: "FRUIT JUICE",
-                          y: 28,
-                          drilldown: "FRUIT JUICE"
-                      },
-                      {
-                          name: "GARLIC",
-                          y: 1,
-                          drilldown: "GARLIC"
-                      },
-                      {
-                          name: "GREEN BEANS",
-                          y: 2,
-                          drilldown: "GREEN BEANS"
-                      },
-                      {
-                          name: "ONION",
-                          y: 1,
-                          drilldown: "ONION"
-                      },
-                      {
-                          name: "PURPLE CABBAGE",
-                          y: 18,
-                          drilldown: "PURPLE CABBAGE"
-                      },
-                      {
-                          name: "STRAWBERRY",
-                          y: 26,
-                          drilldown: "STRAWBERRY"
-                      },
-                      {
-                          name: "TOMAETO",
-                          y: 43,
-                          drilldown: "TOMAETO"
-                      }
-                  ]
-              }
-          ],
-          drilldown: {
-              series: [
-                  {
-                      name: "Chrome",
-                      id: "Chrome",
-                      data: [
-                          [
-                              "v65.0",
-                              0.1
-                          ],
-                          [
-                              "v64.0",
-                              1.3
-                          ],
-                          [
-                              "v63.0",
-                              53.02
-                          ],
-                          [
-                              "v62.0",
-                              1.4
-                          ],
-                          [
-                              "v61.0",
-                              0.88
-                          ],
-                          [
-                              "v60.0",
-                              0.56
-                          ],
-                          [
-                              "v59.0",
-                              0.45
-                          ],
-                          [
-                              "v58.0",
-                              0.49
-                          ],
-                          [
-                              "v57.0",
-                              0.32
-                          ],
-                          [
-                              "v56.0",
-                              0.29
-                          ],
-                          [
-                              "v55.0",
-                              0.79
-                          ],
-                          [
-                              "v54.0",
-                              0.18
-                          ],
-                          [
-                              "v51.0",
-                              0.13
-                          ],
-                          [
-                              "v49.0",
-                              2.16
-                          ],
-                          [
-                              "v48.0",
-                              0.13
-                          ],
-                          [
-                              "v47.0",
-                              0.11
-                          ],
-                          [
-                              "v43.0",
-                              0.17
-                          ],
-                          [
-                              "v29.0",
-                              0.26
-                          ]
-                      ]
-                  },
-                  {
-                      name: "Firefox",
-                      id: "Firefox",
-                      data: [
-                          [
-                              "v58.0",
-                              1.02
-                          ],
-                          [
-                              "v57.0",
-                              7.36
-                          ],
-                          [
-                              "v56.0",
-                              0.35
-                          ],
-                          [
-                              "v55.0",
-                              0.11
-                          ],
-                          [
-                              "v54.0",
-                              0.1
-                          ],
-                          [
-                              "v52.0",
-                              0.95
-                          ],
-                          [
-                              "v51.0",
-                              0.15
-                          ],
-                          [
-                              "v50.0",
-                              0.1
-                          ],
-                          [
-                              "v48.0",
-                              0.31
-                          ],
-                          [
-                              "v47.0",
-                              0.12
-                          ]
-                      ]
-                  },
-                  {
-                      name: "Internet Explorer",
-                      id: "Internet Explorer",
-                      data: [
-                          [
-                              "v11.0",
-                              6.2
-                          ],
-                          [
-                              "v10.0",
-                              0.29
-                          ],
-                          [
-                              "v9.0",
-                              0.27
-                          ],
-                          [
-                              "v8.0",
-                              0.47
-                          ]
-                      ]
-                  },
-                  {
-                      name: "Safari",
-                      id: "Safari",
-                      data: [
-                          [
-                              "v11.0",
-                              3.39
-                          ],
-                          [
-                              "v10.1",
-                              0.96
-                          ],
-                          [
-                              "v10.0",
-                              0.36
-                          ],
-                          [
-                              "v9.1",
-                              0.54
-                          ],
-                          [
-                              "v9.0",
-                              0.13
-                          ],
-                          [
-                              "v5.1",
-                              0.2
-                          ]
-                      ]
-                  },
-                  {
-                      name: "Edge",
-                      id: "Edge",
-                      data: [
-                          [
-                              "v16",
-                              2.6
-                          ],
-                          [
-                              "v15",
-                              0.92
-                          ],
-                          [
-                              "v14",
-                              0.4
-                          ],
-                          [
-                              "v13",
-                              0.1
-                          ]
-                      ]
-                  },
-                  {
-                      name: "Opera",
-                      id: "Opera",
-                      data: [
-                          [
-                              "v50.0",
-                              0.96
-                          ],
-                          [
-                              "v49.0",
-                              0.82
-                          ],
-                          [
-                              "v12.1",
-                              0.14
-                          ]
-                      ]
-                  }
-              ]
-          }
-      });  
-      
-      
     });
-    
-    
   </script>
   <script>
     $(document).ready(function() {
       // Javascript method's body can be found in assets/js/demos.js
       md.initDashboardPageCharts();
-     
+
     });
   </script>
-  <script src="https://code.highcharts.com/highcharts.js"></script>
-  <script src="https://code.highcharts.com/modules/data.js"></script>
-   <script src="https://code.highcharts.com/modules/drilldown.js"></script>
-   <script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/modules/data.js"></script>
-<script src="https://code.highcharts.com/modules/exporting.js"></script>
-<script src="https://code.highcharts.com/modules/export-data.js"></script>
 </body>
 
 </html>
