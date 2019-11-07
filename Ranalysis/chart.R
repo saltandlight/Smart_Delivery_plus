@@ -51,7 +51,7 @@ work5 <- work %>%
 
 str(work5)
 ggplot(data=work5, aes(x=V3, order_price))+
-  geom_line(color='red', size=3)+
+  geom_line()+
   labs(title="날짜별 주문량", x="날짜", y="주문량") 
 
 cor.test(as.numeric(work5$V3), work5$order_price)
