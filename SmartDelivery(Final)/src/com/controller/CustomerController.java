@@ -142,7 +142,7 @@ public class CustomerController {
 		return mv;
 	}
 	
-	@RequestMapping("dashboard.del")
+	@RequestMapping("/dashboard.del")
 	public ModelAndView dashboard(ModelAndView mv,
 			HttpSession session) {
 		
