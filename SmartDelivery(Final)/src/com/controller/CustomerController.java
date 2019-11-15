@@ -121,7 +121,7 @@ public class CustomerController {
 				mv.addObject("center","user/shop");
 				mv.setViewName("index");
 			}else {
-				System.out.println("11111111111111");
+			//	System.out.println("11111111111111");
 				mv.addObject("center", "user/login");
 				mv.setViewName("index");
 			}
