@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.OrderMapper">
+	
+	<insert id="insert" parameterType="order">
+		INSERT INTO ORDER_TB VALUES (#{order_id},#{customer_id},#{order_price},
+		SYSDATE,#{order_addr},#{order_phone},#{order_pay},#{order_wea},
+		#{cx},#{cy},#{current_time}, #{order_status}, #{product_id})	
+	</insert>
+	
+	<!-- <update id="update" parameterType="cart">
+		UPDATE CART_TB SET PWD=#{pwd},NAME=#{name} WHERE ID=#{id}
+	</update> -->
+	
+	<delete id="delete" parameterType="String">
+		DELETE FROM ORDER_TB WHERE order_id=#{order_id}
+	</delete>
+	
+	<select id="select" parameterType="String" 
+	resultType="order">	
+		SELECT * FROM ORDER_TB WHERE customer_id=#{customer_id}	
+	</select>
+	
+	<select id="select_oid" parameterType="String" 
+	resultType="order">	
+		SELECT * FROM ORDER_TB WHERE order_id=#{order_id }	
+	</select>
+	
+	
+	<select id="oidmaxselect" resultType="order">
+		SELECT * FROM ORDER_TB
+		WHERE SUBSTR(ORDER_ID,4) = (SELECT MAX(TO_NUMBER(SUBSTR(ORDER_ID,4))) FROM ORDER_TB)
+	</select>
+	
+	<select id="recmaxselect" parameterType="String" resultType="order">
+	SELECT * FROM ORDER_TB
+		WHERE SUBSTR(ORDER_ID,4) = (SELECT MAX(TO_NUMBER(SUBSTR(ORDER_ID,4))) FROM ORDER_TB WHERE CUSTOMER_ID=#{customer_id})
+	</select>
+		
+	<select id="selectall" resultType="order">
+		SELECT * FROM ORDER_TB
+	</select>
+	
+</mapper>
+
+

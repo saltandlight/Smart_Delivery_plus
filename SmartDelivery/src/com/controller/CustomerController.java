@@ -1,6 +1,7 @@
 package com.controller;
 
 import java.io.PrintWriter;
+import java.util.ArrayList;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -13,10 +14,15 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.frame.Biz;
+import com.frame.DependenciesBiz;
 import com.vo.Customer;
+import com.vo.Product;
 
 @Controller
 public class CustomerController {
+	
+	@Resource(name="pbiz")
+	DependenciesBiz<String, Product> pbiz;
 	
 	@Resource(name="cbiz")
 	Biz<String,Customer> cbiz;
@@ -53,7 +59,13 @@ public class CustomerController {
 			e.printStackTrace();
 		}
 		
-		mv.setViewName("user/join");
+		try {
+			mv.addObject("center","user/join");
+			mv.setViewName("index");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return mv;
 	}
 	
@@ -78,7 +90,8 @@ public class CustomerController {
 			mv.addObject("join");
 			e.printStackTrace();
 		}
-		mv.setViewName("user/login");
+		mv.addObject("center","user/login");
+		mv.setViewName("index");
 		return mv;
 	}
 	
@@ -89,15 +102,26 @@ public class CustomerController {
 		String pwd = request.getParameter("CUSTOMER_PWD");
 		
 		Customer customer=new Customer();
-		
+		ArrayList<Product> list;
 		try {
 			customer=cbiz.get(id);
 			System.out.println(customer.toString());
 			if(pwd.equals(customer.getCustomer_pwd())) {
 				session.setAttribute("loginuser", customer);
-				mv.setViewName("user/shop");
+				
+				try {
+					list = pbiz.get();
+					mv.addObject("plist", list);
+					
+				} catch (Exception e) {	
+					e.printStackTrace();
+				}
+				
+				mv.addObject("center","user/shop");
+				mv.setViewName("index");
 			}else {
-				mv.setViewName("user/login");
+				mv.addObject("center", "user/login");
+				mv.setViewName("index");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -106,5 +130,17 @@ public class CustomerController {
 		return mv;		
 		
 	}
+	
+	@RequestMapping("/logout.del")
+	public ModelAndView logout(ModelAndView mv,
+			HttpSession session) {
+		if(session != null) {
+			session.invalidate();
+		}
+		mv.addObject("center", "user/login");
+		mv.setViewName("index");
+		return mv;
+	}
+	
 	
 }

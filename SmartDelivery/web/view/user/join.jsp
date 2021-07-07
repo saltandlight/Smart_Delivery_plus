@@ -2,18 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-    
-  </head>
-  <!--  
-  <style>
-  .join_form_div{
-	margin: auto 0;
-	padding: 200px;
-   }
-  
-  
-  </style>-->
-  <body class="goto-here">
+ 
 		
     <div class="hero-wrap hero-bread" style="background-image: url('/SmartDelivery/view/user/images/bg_1.jpg');">
       <div class="container">
@@ -25,11 +14,11 @@
         </div>
       </div>
     </div>
-
+ <!--   </div> -->
 
         <div class="join_form_div">
           <div>
-            <form action="customerjoinimpl.del" method="POST" onclick="return joinCheck(this)" class="bg-white p-5 contact-form">
+            <form action="customerjoinimpl.del" method="POST" onclick="return joinCheck(this)" >
              <div class="form-group"> 
                 <input type="text"  size="7" id="id" name="CUSTOMER_ID" class="form-control" placeholder="ID">
             
@@ -69,10 +58,6 @@
              
              
           </div>
-<!--  
-          <div class="col-md-6 d-flex">
-          	<div id="map" class="bg-white"></div>     
-          -->
           </div>
      
         </div>
@@ -82,9 +67,6 @@
     
     
   
-
-  <!-- loader -->
-  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
 <script>
 	function joinCheck(obj) {		
